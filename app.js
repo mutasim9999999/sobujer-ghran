@@ -204,6 +204,8 @@ const translations = {
     "cart.shipping": "Delivery and payment options would be confirmed at checkout.",
     "cart.checkout": "Continue to checkout",
     "cart.demo": "Preview only · no order or payment is submitted",
+    "cart.restoreWarning": "Some saved bag data was invalid and could not be restored.",
+    "cart.persistenceWarning": "Your bag is available for this visit, but could not be saved for next time.",
     "toast.added": "Added to your bag",
     "toast.account": "Account features are a visual preview only.",
     "toast.newsletter": "Thanks — this demo form does not send or store your email.",
@@ -417,6 +419,8 @@ const translations = {
     "cart.shipping": "চেকআউটে ডেলিভারি ও পেমেন্টের তথ্য নিশ্চিত করা হবে।",
     "cart.checkout": "চেকআউটে যান",
     "cart.demo": "শুধু প্রিভিউ · অর্ডার বা পেমেন্ট করা হয় না",
+    "cart.restoreWarning": "সংরক্ষিত ব্যাগের কিছু তথ্য সঠিক ছিল না, তাই পুনরুদ্ধার করা যায়নি।",
+    "cart.persistenceWarning": "এইবারের জন্য আপনার ব্যাগ ব্যবহার করা যাবে, তবে পরেরবারের জন্য সংরক্ষণ করা যায়নি।",
     "toast.added": "আপনার ব্যাগে যোগ হয়েছে",
     "toast.account": "অ্যাকাউন্ট ফিচারগুলো কেবল ভিজ্যুয়াল প্রিভিউ।",
     "toast.newsletter": "ধন্যবাদ — ডেমো ফর্মে ইমেইল পাঠানো বা সংরক্ষণ করা হয় না।",
@@ -435,6 +439,8 @@ const products = {
 };
 
 const cart = new Map();
+const CART_STORAGE_KEY = "sobujer-ghran-cart-v1";
+const CART_STORAGE_VERSION = 1;
 const languageSwitch = document.querySelector("#languageSwitch");
 const cartDrawer = document.querySelector("#cartDrawer");
 const drawerBackdrop = document.querySelector("#drawerBackdrop");
@@ -452,6 +458,9 @@ let activeProductKey = null;
 let productQuantity = 1;
 let openSearchAfterHomeNavigation = false;
 let searchOpenerAfterHomeNavigation = null;
+let cartPersistenceWarningShown = false;
+let cartPersistenceWarningPending = false;
+let cartRestoreWarningPending = false;
 const homePageTitle = document.title;
 
 function formatPrice(amount) {
@@ -466,6 +475,91 @@ function getProductName(product) {
 function formatQuantity(quantity) {
   const locale = language === "bn" ? "bn-BD" : "en-BD";
   return new Intl.NumberFormat(locale).format(quantity);
+}
+
+function restoreCart() {
+  let serializedCart;
+  try {
+    serializedCart = window.localStorage.getItem(CART_STORAGE_KEY);
+  } catch (error) {
+    console.error("Could not read the saved cart from localStorage.", error);
+    cartPersistenceWarningPending = true;
+    return;
+  }
+  if (serializedCart === null) return;
+
+  let savedCart;
+  try {
+    savedCart = JSON.parse(serializedCart);
+  } catch (error) {
+    console.warn("Ignoring malformed saved cart data.", error);
+    cartRestoreWarningPending = true;
+    return;
+  }
+
+  if (
+    !savedCart ||
+    typeof savedCart !== "object" ||
+    Array.isArray(savedCart) ||
+    savedCart.version !== CART_STORAGE_VERSION ||
+    !savedCart.items ||
+    typeof savedCart.items !== "object" ||
+    Array.isArray(savedCart.items)
+  ) {
+    console.warn("Ignoring unsupported or malformed saved cart data.");
+    cartRestoreWarningPending = true;
+    return;
+  }
+
+  let ignoredEntries = 0;
+  let totalQuantity = 0;
+  let subtotal = 0;
+  for (const [key, quantity] of Object.entries(savedCart.items)) {
+    if (!Object.prototype.hasOwnProperty.call(products, key) || !Number.isSafeInteger(quantity) || quantity < 1) {
+      ignoredEntries += 1;
+      continue;
+    }
+
+    const itemSubtotal = products[key].price * quantity;
+    const nextQuantity = totalQuantity + quantity;
+    const nextSubtotal = subtotal + itemSubtotal;
+    if (!Number.isSafeInteger(itemSubtotal) || !Number.isSafeInteger(nextQuantity) || !Number.isSafeInteger(nextSubtotal)) {
+      ignoredEntries += 1;
+      continue;
+    }
+
+    cart.set(key, quantity);
+    totalQuantity = nextQuantity;
+    subtotal = nextSubtotal;
+  }
+
+  if (ignoredEntries > 0) {
+    console.warn("Ignoring invalid entries in saved cart data.", ignoredEntries);
+    cartRestoreWarningPending = true;
+  }
+}
+
+function persistCart() {
+  try {
+    if (cart.size === 0) {
+      window.localStorage.removeItem(CART_STORAGE_KEY);
+    } else {
+      window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify({
+        version: CART_STORAGE_VERSION,
+        items: Object.fromEntries(cart)
+      }));
+    }
+    return true;
+  } catch (error) {
+    console.error("Could not save the cart to localStorage.", error);
+    return false;
+  }
+}
+
+function showCartPersistenceWarning() {
+  if (cartPersistenceWarningShown) return;
+  cartPersistenceWarningShown = true;
+  showToast(translations[language]["cart.persistenceWarning"]);
 }
 
 function getProductImages(product) {
@@ -803,7 +897,12 @@ function addToCart(key, quantity) {
   }
 
   cart.set(key, (cart.get(key) || 0) + quantity);
+  const persisted = persistCart();
   renderCart();
+  if (!persisted) {
+    showCartPersistenceWarning();
+    return;
+  }
   const productName = getProductName(products[key]);
   const locale = language === "bn" ? "bn-BD" : "en-BD";
   const quantityPrefix = quantity > 1 ? `${new Intl.NumberFormat(locale).format(quantity)} × ` : "";
@@ -856,7 +955,9 @@ cartItems.addEventListener("click", (event) => {
   const change = button.dataset.change;
   if (nextCount <= 0) cart.delete(key);
   else cart.set(key, nextCount);
+  const persisted = persistCart();
   renderCart();
+  if (!persisted) showCartPersistenceWarning();
   const focusTarget = Array.from(cartItems.querySelectorAll("button[data-quantity]"))
     .find((control) => control.dataset.quantity === key && control.dataset.change === change);
   (focusTarget || document.querySelector("#cartClose")).focus();
@@ -998,6 +1099,13 @@ document.querySelector("#newsletterForm").addEventListener("submit", (event) => 
 });
 
 document.querySelector("#currentYear").textContent = String(new Date().getFullYear());
+restoreCart();
 applyLanguage(language);
+if (cartRestoreWarningPending) {
+  showToast(translations[language]["cart.restoreWarning"]);
+}
+if (cartPersistenceWarningPending) {
+  showCartPersistenceWarning();
+}
 window.addEventListener("hashchange", handlePageRoute);
 handlePageRoute();

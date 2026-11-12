@@ -412,7 +412,7 @@ h1 em, h2 em { color: var(--clay); font-weight: 400; }
 .review-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
 .review-card { min-height: 245px; margin: 0; padding: 22px; border: 1px solid rgba(220, 213, 199, .8); background: #fffefa; box-shadow: 0 10px 26px rgba(35, 41, 35, .05); }
 .review-card--two { margin-top: 32px; }
-.review-card__stars { display: flex; align-items: center; justify-content: space-between; gap: 6px; color: var(--brass); font-size: 12px; letter-spacing: .1em; }
+.review-card__stars { display: flex; align-items: center; justify-content: space-between; gap: 6px; color: var(--clay); font-size: 12px; letter-spacing: .1em; }
 .review-card__stars small { color: var(--clay); font-size: 7px; font-weight: 700; letter-spacing: .12em; }
 .review-card blockquote { min-height: 91px; margin: 20px 0 16px; color: var(--forest); font-family: var(--serif); font-size: 22px; line-height: 1.22; }
 .review-card figcaption { display: flex; align-items: center; gap: 9px; padding-top: 13px; border-top: 1px solid #e8e2d5; }
@@ -662,6 +662,12 @@ html[lang="bn"] .section-heading h2, html[lang="bn"] .review-intro h2, html[lang
 
 @media (max-width: 380px) {
   .section-wrap { width: calc(100% - 32px); }
+  .header__inner { grid-template-columns: minmax(0, 1fr) auto; gap: 4px; }
+  .wordmark { gap: 5px; }
+  .wordmark__logo { width: 44px; height: 44px; flex-basis: 44px; }
+  .wordmark__name { font-size: 19px; }
+  .header-actions { gap: 0; }
+  .header-actions .icon-button { min-width: 36px; }
   .hero h1 { font-size: 46px; }
   .hero__visual { min-height: 390px; }
   .hero__photo-frame { height: 375px; }

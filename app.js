@@ -76,6 +76,7 @@ const translations = {
     "product.add": "Add",
     "sample.note": "Sample products and prices for visual review only.",
     "search.empty": "No matching rituals yet. Try another word.",
+    "search.results": "{count} products shown.",
     "story.imageCaption": "A ritual, in the making",
     "story.eyebrow": "A NOTE FROM US",
     "story.titleStart": "Beauty in the",
@@ -149,8 +150,9 @@ const translations = {
     "toast.account": "Account features are a visual preview only.",
     "toast.newsletter": "Thanks — this demo form does not send or store your email.",
     "toast.checkout": "Checkout is a visual preview; no order or payment is submitted.",
-    "cart.remove": "Remove one",
-    "cart.quantity": "Quantity"
+    "cart.quantityFor": "Quantity for {product}",
+    "cart.decrease": "Decrease quantity of {product}",
+    "cart.increase": "Increase quantity of {product}"
   },
   bn: {
     skip: "মূল কনটেন্টে যান",
@@ -229,6 +231,7 @@ const translations = {
     "product.add": "যোগ",
     "sample.note": "শুধু ভিজ্যুয়াল পর্যালোচনার জন্য নমুনা পণ্য ও দাম।",
     "search.empty": "মিল পাওয়া যায়নি। অন্য শব্দ দিয়ে চেষ্টা করুন।",
+    "search.results": "{count}টি পণ্য দেখানো হচ্ছে।",
     "story.imageCaption": "গড়ে ওঠা এক রীতি",
     "story.eyebrow": "আমাদের কথা",
     "story.titleStart": "মাঝের মুহূর্তেও",
@@ -302,8 +305,9 @@ const translations = {
     "toast.account": "অ্যাকাউন্ট ফিচারগুলো কেবল ভিজ্যুয়াল প্রিভিউ।",
     "toast.newsletter": "ধন্যবাদ — ডেমো ফর্মে ইমেইল পাঠানো বা সংরক্ষণ করা হয় না।",
     "toast.checkout": "এটি চেকআউটের ভিজ্যুয়াল প্রিভিউ; অর্ডার বা পেমেন্ট জমা হয় না।",
-    "cart.remove": "একটি সরান",
-    "cart.quantity": "পরিমাণ"
+    "cart.quantityFor": "পণ্যের পরিমাণ: {product}",
+    "cart.decrease": "পরিমাণ কমান: {product}",
+    "cart.increase": "পরিমাণ বাড়ান: {product}"
   }
 };
 
@@ -326,6 +330,8 @@ const cartSubtotal = document.querySelector("#cartSubtotal");
 const toast = document.querySelector("#toast");
 let language = "en";
 let toastTimer;
+let inertPageElements = [];
+let languageInitialized = false;
 
 function formatPrice(amount) {
   const locale = language === "bn" ? "bn-BD" : "en-BD";
@@ -357,6 +363,8 @@ function applyLanguage(nextLanguage) {
     if (Number.isFinite(price)) element.textContent = formatPrice(price);
   });
   renderCart();
+  updateProductResults(languageInitialized);
+  languageInitialized = true;
 }
 
 function showToast(message) {
@@ -367,6 +375,12 @@ function showToast(message) {
 }
 
 function openCart() {
+  inertPageElements = Array.from(document.body.children)
+    .filter((element) => element instanceof HTMLElement && element !== cartDrawer && element !== drawerBackdrop && element !== toast)
+    .map((element) => ({ element, wasInert: element.inert }));
+  inertPageElements.forEach(({ element }) => {
+    element.inert = true;
+  });
   cartDrawer.inert = false;
   cartDrawer.classList.add("is-open");
   cartDrawer.setAttribute("aria-hidden", "false");
@@ -380,8 +394,18 @@ function closeCart() {
   cartDrawer.setAttribute("aria-hidden", "true");
   cartDrawer.inert = true;
   drawerBackdrop.hidden = true;
+  inertPageElements.forEach(({ element, wasInert }) => {
+    element.inert = wasInert;
+  });
+  inertPageElements = [];
   document.body.classList.remove("drawer-open");
   document.querySelector("#cartToggle").focus();
+}
+
+function getCartFocusableElements() {
+  return Array.from(cartDrawer.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  )).filter((element) => element.getClientRects().length > 0 && getComputedStyle(element).visibility !== "hidden");
 }
 
 function renderCart() {
@@ -395,15 +419,16 @@ function renderCart() {
   cartBottom.hidden = quantity === 0;
   cartItems.innerHTML = entries.map(([key, count]) => {
     const product = products[key];
+    const productName = translations[language][product.nameKey];
     return `<article class="cart-item">
       <div class="cart-item__image"><img src="${product.image}" alt=""></div>
       <div class="cart-item__info">
-        <strong>${translations[language][product.nameKey]}</strong>
+        <strong>${productName}</strong>
         <span>${product.detail}</span>
-        <div class="cart-item__quantity" aria-label="${translations[language]["cart.quantity"]}">
-          <button type="button" data-quantity="${key}" data-change="-1" aria-label="${translations[language]["cart.remove"]}"><span aria-hidden="true">−</span></button>
+        <div class="cart-item__quantity" role="group" aria-label="${translations[language]["cart.quantityFor"].replace("{product}", productName)}">
+          <button type="button" data-quantity="${key}" data-change="-1" aria-label="${translations[language]["cart.decrease"].replace("{product}", productName)}"><span aria-hidden="true">−</span></button>
           <span>${language === "bn" ? new Intl.NumberFormat("bn-BD").format(count) : count}</span>
-          <button type="button" data-quantity="${key}" data-change="1" aria-label="${translations[language]["cart.quantity"]} +"><span aria-hidden="true">+</span></button>
+          <button type="button" data-quantity="${key}" data-change="1" aria-label="${translations[language]["cart.increase"].replace("{product}", productName)}"><span aria-hidden="true">+</span></button>
         </div>
       </div>
       <span class="cart-item__price">${formatPrice(product.price * count)}</span>
@@ -439,9 +464,13 @@ cartItems.addEventListener("click", (event) => {
   if (!button) return;
   const key = button.dataset.quantity;
   const nextCount = (cart.get(key) || 0) + Number(button.dataset.change);
+  const change = button.dataset.change;
   if (nextCount <= 0) cart.delete(key);
   else cart.set(key, nextCount);
   renderCart();
+  const focusTarget = Array.from(cartItems.querySelectorAll("button[data-quantity]"))
+    .find((control) => control.dataset.quantity === key && control.dataset.change === change);
+  (focusTarget || document.querySelector("#cartClose")).focus();
 });
 
 document.addEventListener("keydown", (event) => {
@@ -450,11 +479,14 @@ document.addEventListener("keydown", (event) => {
     else closeSearch();
   }
   if (event.key === "Tab" && cartDrawer.classList.contains("is-open")) {
-    const focusable = Array.from(cartDrawer.querySelectorAll("button:not([disabled]), a[href], input:not([disabled])"));
+    const focusable = getCartFocusableElements();
     if (!focusable.length) return;
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
+    if (!cartDrawer.contains(document.activeElement)) {
+      event.preventDefault();
+      first.focus();
+    } else if (event.shiftKey && document.activeElement === first) {
       event.preventDefault();
       last.focus();
     } else if (!event.shiftKey && document.activeElement === last) {
@@ -468,15 +500,48 @@ const searchPanel = document.querySelector("#searchPanel");
 const searchToggle = document.querySelector("#searchToggle");
 const searchInput = document.querySelector("#productSearch");
 const emptySearch = document.querySelector("#emptySearch");
+const searchResultsStatus = document.querySelector("#searchResultsStatus");
+let activeCategory = "all";
+let searchOpener = null;
 
 function toggleSearch(open) {
-  searchPanel.hidden = !open;
-  searchToggle.setAttribute("aria-expanded", String(open));
-  if (open) searchInput.focus();
+  if (open) {
+    if (searchPanel.hidden) {
+      searchOpener = document.activeElement === document.body ? searchToggle : document.activeElement;
+    }
+    searchPanel.hidden = false;
+    searchToggle.setAttribute("aria-expanded", "true");
+    searchInput.focus();
+    return;
+  }
+  searchPanel.hidden = true;
+  searchToggle.setAttribute("aria-expanded", "false");
+  const focusTarget = searchOpener && searchOpener.isConnected && searchOpener.getClientRects().length > 0
+    ? searchOpener
+    : searchToggle;
+  focusTarget.focus();
+  searchOpener = null;
 }
 
 function closeSearch() {
   if (!searchPanel.hidden) toggleSearch(false);
+}
+
+function updateProductResults(announce = true) {
+  const query = searchInput.value.trim().toLocaleLowerCase();
+  let visibleCount = 0;
+  document.querySelectorAll(".product-card").forEach((card) => {
+    const matchesCategory = activeCategory === "all" || card.dataset.category === activeCategory;
+    const matchesQuery = !query || `${card.dataset.search} ${card.textContent}`.toLocaleLowerCase().includes(query);
+    card.hidden = !matchesCategory || !matchesQuery;
+    if (!card.hidden) visibleCount += 1;
+  });
+  emptySearch.hidden = visibleCount > 0;
+  if (announce) {
+    const locale = language === "bn" ? "bn-BD" : "en-BD";
+    const count = new Intl.NumberFormat(locale).format(visibleCount);
+    searchResultsStatus.textContent = translations[language]["search.results"].replace("{count}", count);
+  }
 }
 
 searchToggle.addEventListener("click", () => toggleSearch(searchPanel.hidden));
@@ -485,16 +550,7 @@ document.querySelector("#mobileSearch").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 document.querySelector("#searchClose").addEventListener("click", closeSearch);
-searchInput.addEventListener("input", () => {
-  const query = searchInput.value.trim().toLocaleLowerCase();
-  let visibleCount = 0;
-  document.querySelectorAll(".product-card").forEach((card) => {
-    const matches = !query || `${card.dataset.search} ${card.textContent}`.toLocaleLowerCase().includes(query);
-    card.hidden = !matches;
-    if (matches) visibleCount += 1;
-  });
-  emptySearch.hidden = visibleCount > 0;
-});
+searchInput.addEventListener("input", () => updateProductResults());
 
 document.querySelectorAll(".filter-chip").forEach((button) => {
   button.addEventListener("click", () => {
@@ -503,15 +559,9 @@ document.querySelectorAll(".filter-chip").forEach((button) => {
       chip.classList.toggle("is-selected", selected);
       chip.setAttribute("aria-pressed", String(selected));
     });
-    const category = button.dataset.filter;
-    let visibleCount = 0;
-    document.querySelectorAll(".product-card").forEach((card) => {
-      const matches = category === "all" || card.dataset.category === category;
-      card.hidden = !matches;
-      if (matches) visibleCount += 1;
-    });
-    emptySearch.hidden = visibleCount > 0;
+    activeCategory = button.dataset.filter;
     searchInput.value = "";
+    updateProductResults();
   });
 });
 

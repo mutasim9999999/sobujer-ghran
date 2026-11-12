@@ -87,7 +87,7 @@ const translations = {
     "pdp.category.cones": "CONE",
     "pdp.category.kit": "RITUAL SET",
     "pdp.namePending": "Demo product name · confirmation pending",
-    "pdp.pricePending": "Price to be confirmed",
+    "pdp.demoPrice": "Demo price",
     "pdp.ratingPending": "Rating not shown until verified product reviews are available.",
     "pdp.descriptionPending": "Product description pending confirmation.",
     "pdp.sizeWeight": "Size / weight",
@@ -300,7 +300,7 @@ const translations = {
     "pdp.category.cones": "কোন",
     "pdp.category.kit": "রিচুয়াল সেট",
     "pdp.namePending": "নমুনা পণ্যের নাম · নিশ্চিত করা বাকি",
-    "pdp.pricePending": "দাম নিশ্চিত করা বাকি",
+    "pdp.demoPrice": "নমুনা দাম",
     "pdp.ratingPending": "যাচাইকৃত পণ্য-পর্যায়ের মতামত না থাকায় রেটিং দেখানো হচ্ছে না।",
     "pdp.descriptionPending": "পণ্যের বিবরণ নিশ্চিত করা বাকি।",
     "pdp.sizeWeight": "আকার / ওজন",
@@ -586,8 +586,9 @@ function renderRelatedProducts(currentKey) {
     nameHeading.textContent = name;
     pendingText.textContent = translations[language]["pdp.relatedProductPending"];
     price.className = "pdp-related-card__price";
-    price.textContent = "৳ —";
-    price.setAttribute("aria-label", translations[language]["pdp.pricePending"]);
+    const formattedPrice = formatPrice(product.price);
+    price.textContent = formattedPrice;
+    price.setAttribute("aria-label", `${translations[language]["pdp.demoPrice"]}: ${formattedPrice}`);
     details.append(nameHeading, pendingText, price);
     link.append(imageFrame, details);
     card.append(link);
@@ -605,7 +606,7 @@ function renderProductDetails(key) {
   document.querySelector("#pdpTitle").textContent = name;
   document.querySelector("#pdpBreadcrumbCategory").textContent = translations[language][product.categoryKey];
   document.querySelector("#pdpBreadcrumbProduct").textContent = name;
-  document.querySelector("#pdpPrice").textContent = "৳ —";
+  document.querySelector("#pdpPrice").textContent = formatPrice(product.price);
   document.querySelector("#pdpAddToCart").setAttribute("aria-label", translations[language][`product.addAria.${key}`]);
   document.querySelector("#pdpQuantityGroup").setAttribute("aria-label", translations[language]["pdp.quantityFor"].replace("{product}", name));
   document.querySelector("#pdpQuantityDecrease").setAttribute("aria-label", translations[language]["pdp.quantityDecreaseFor"].replace("{product}", name));

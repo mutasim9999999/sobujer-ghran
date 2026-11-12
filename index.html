@@ -100,6 +100,7 @@
     </nav>
 
     <main id="main">
+      <div id="homeView">
       <section class="hero section-wrap" id="top" aria-labelledby="heroTitle">
         <div class="hero__copy">
           <p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="hero.eyebrow">BOTANICAL MEHENDI · MADE FOR SLOW MOMENTS</span></p>
@@ -161,53 +162,53 @@
         </div>
 
         <div class="product-grid" id="productGrid">
-          <article class="product-card" data-category="powder" data-search="henna powder everyday">
-            <a class="product-card__image product-card__image--powder" href="#story" aria-label="View Everyday Henna Powder">
+          <article class="product-card" data-product-id="powder" data-category="powder" data-search="henna powder everyday">
+            <a class="product-card__image product-card__image--powder" href="#product/powder" aria-label="View Everyday Henna Powder details" data-i18n-aria="product.detailsAria.powder">
               <span class="product-card__badge" data-i18n="product.badge.bestseller">A LITTLE FAVOURITE</span>
               <img src="public/brand-assets/product-02.jpg" alt="Henna cone with a bowl of henna powder" data-i18n-alt="product.powderImageAlt" loading="lazy" width="1086" height="1448">
               <span class="product-card__quick" data-i18n="product.view">Discover</span>
             </a>
             <div class="product-card__details">
-              <div><p class="product-card__type" data-i18n="product.type.powder">POWDER · 100 G</p><h3 data-i18n="product.powder">Everyday Henna Powder</h3></div>
+              <div><p class="product-card__type" data-i18n="product.type.powder">POWDER · 100 G</p><h3><a class="product-card__title-link" href="#product/powder" data-i18n="product.powder">Everyday Henna Powder</a></h3></div>
               <span class="product-price" data-price="380"></span>
             </div>
             <div class="product-card__footer"><span data-i18n="product.detail.powder">For the ritual you return to</span><button class="add-button" type="button" data-add="powder" aria-label="Add Everyday Henna Powder to bag" data-i18n-aria="product.addAria.powder"><span data-i18n="product.add">Add</span><span aria-hidden="true">+</span></button></div>
           </article>
 
-          <article class="product-card" data-category="cones" data-search="henna cone mehendi">
-            <a class="product-card__image product-card__image--cone" href="#ritual" aria-label="View Mehendi Cones">
+          <article class="product-card" data-product-id="cones" data-category="cones" data-search="henna cone mehendi">
+            <a class="product-card__image product-card__image--cone" href="#product/cones" aria-label="View Mehendi Cones details" data-i18n-aria="product.detailsAria.cones">
               <span class="product-card__badge product-card__badge--quiet" data-i18n="product.badge.ready">READY TO CREATE</span>
               <img src="public/brand-assets/product-01.png" alt="Henna cone beside an intricately decorated hand" data-i18n-alt="product.coneImageAlt" loading="lazy" width="1254" height="1254">
               <span class="product-card__quick" data-i18n="product.view">Discover</span>
             </a>
             <div class="product-card__details">
-              <div><p class="product-card__type" data-i18n="product.type.cones">CONE SET · 3 PIECES</p><h3 data-i18n="product.cones">Mehendi Cones, Set of 3</h3></div>
+              <div><p class="product-card__type" data-i18n="product.type.cones">CONE SET · 3 PIECES</p><h3><a class="product-card__title-link" href="#product/cones" data-i18n="product.cones">Mehendi Cones, Set of 3</a></h3></div>
               <span class="product-price" data-price="350"></span>
             </div>
             <div class="product-card__footer"><span data-i18n="product.detail.cones">A little line, a lot of possibility</span><button class="add-button" type="button" data-add="cones" aria-label="Add Mehendi Cones to bag" data-i18n-aria="product.addAria.cones"><span data-i18n="product.add">Add</span><span aria-hidden="true">+</span></button></div>
           </article>
 
-          <article class="product-card" data-category="sets" data-search="ritual kit henna set">
-            <a class="product-card__image product-card__image--kit" href="#ritual" aria-label="View The Slow Ritual Kit">
+          <article class="product-card" data-product-id="kit" data-category="sets" data-search="ritual kit henna set">
+            <a class="product-card__image product-card__image--kit" href="#product/kit" aria-label="View The Slow Ritual Kit details" data-i18n-aria="product.detailsAria.kit">
               <span class="product-card__badge" data-i18n="product.badge.gift">A THOUGHTFUL GIFT</span>
               <img src="public/brand-assets/mehndi-ceremony.jpg" alt="Hands decorated with traditional mehendi" data-i18n-alt="product.kitImageAlt" loading="lazy" width="960" height="1620">
               <span class="product-card__quick" data-i18n="product.view">Discover</span>
             </a>
             <div class="product-card__details">
-              <div><p class="product-card__type" data-i18n="product.type.kit">RITUAL SET · 4 PIECES</p><h3 data-i18n="product.kit">The Slow Ritual Kit</h3></div>
+              <div><p class="product-card__type" data-i18n="product.type.kit">RITUAL SET · 4 PIECES</p><h3><a class="product-card__title-link" href="#product/kit" data-i18n="product.kit">The Slow Ritual Kit</a></h3></div>
               <span class="product-price" data-price="1250"></span>
             </div>
             <div class="product-card__footer"><span data-i18n="product.detail.kit">Everything for a slower afternoon</span><button class="add-button" type="button" data-add="kit" aria-label="Add The Slow Ritual Kit to bag" data-i18n-aria="product.addAria.kit"><span data-i18n="product.add">Add</span><span aria-hidden="true">+</span></button></div>
           </article>
 
-          <article class="product-card" data-category="powder" data-search="henna powder detail fine">
-            <a class="product-card__image product-card__image--detail" href="#story" aria-label="View Fine Sift Henna">
+          <article class="product-card" data-product-id="fine" data-category="powder" data-search="henna powder detail fine">
+            <a class="product-card__image product-card__image--detail" href="#product/fine" aria-label="View Fine Sift Henna details" data-i18n-aria="product.detailsAria.fine">
               <span class="product-card__badge product-card__badge--quiet" data-i18n="product.badge.detail">THE LITTLE DETAILS</span>
               <img src="public/brand-assets/product-02.jpg" alt="Henna cone with a bowl of henna powder" data-i18n-alt="product.powderImageAlt" loading="lazy" width="1086" height="1448">
               <span class="product-card__quick" data-i18n="product.view">Discover</span>
             </a>
             <div class="product-card__details">
-              <div><p class="product-card__type" data-i18n="product.type.fine">POWDER · 50 G</p><h3 data-i18n="product.fine">Fine Sift Henna</h3></div>
+              <div><p class="product-card__type" data-i18n="product.type.fine">POWDER · 50 G</p><h3><a class="product-card__title-link" href="#product/fine" data-i18n="product.fine">Fine Sift Henna</a></h3></div>
               <span class="product-price" data-price="240"></span>
             </div>
             <div class="product-card__footer"><span data-i18n="product.detail.fine">Small batch, sample description</span><button class="add-button" type="button" data-add="fine" aria-label="Add Fine Sift Henna to bag" data-i18n-aria="product.addAria.fine"><span data-i18n="product.add">Add</span><span aria-hidden="true">+</span></button></div>
@@ -334,6 +335,161 @@
           <button class="button button--light" type="submit"><span data-i18n="newsletter.cta">Join the list</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
           <p data-i18n="newsletter.fineprint">Demo form only — nothing is sent or stored.</p>
         </form>
+      </section>
+      </div>
+
+      <section class="pdp-view" id="productView" hidden aria-labelledby="pdpTitle">
+        <div id="pdpContent">
+          <div class="pdp-container section-wrap">
+            <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="#top" data-i18n="pdp.home">Home</a></li>
+                <li class="pdp-breadcrumb__separator" aria-hidden="true">/</li>
+                <li><a href="#shop" data-i18n="nav.shop">Shop</a></li>
+                <li class="pdp-breadcrumb__separator" aria-hidden="true">/</li>
+                <li id="pdpBreadcrumbCategory"></li>
+                <li class="pdp-breadcrumb__separator" aria-hidden="true">/</li>
+                <li aria-current="page" id="pdpBreadcrumbProduct"></li>
+              </ol>
+            </nav>
+            <p class="pdp-preview-note" data-i18n="pdp.previewNote">Product information is a visual preview; unverified details are marked.</p>
+
+            <div class="pdp-layout">
+              <div class="pdp-gallery">
+                <div class="pdp-gallery__stage">
+                  <img id="pdpMainImage" alt="" hidden>
+                  <div class="pdp-gallery__placeholder" id="pdpImagePlaceholder" role="img" aria-label="Product image pending confirmation" data-i18n-aria="pdp.imagePending">
+                    <svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg>
+                    <span data-i18n="pdp.imagePending">Product image pending confirmation</span>
+                  </div>
+                  <span class="pdp-gallery__caption" id="pdpImageCaption" data-i18n="pdp.imageNote">Existing brand image</span>
+                </div>
+                <div class="pdp-gallery__thumbs" id="pdpThumbnails" role="group" aria-label="Product image gallery" data-i18n-aria="pdp.galleryLabel"></div>
+                <p class="sr-only" id="pdpGalleryStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+              </div>
+
+              <div class="pdp-info">
+                <p class="pdp-eyebrow" id="pdpCategory"></p>
+                <h1 id="pdpTitle" tabindex="-1"></h1>
+                <span class="pdp-data-tag pdp-name-note" data-i18n="pdp.namePending">Demo product name · confirmation pending</span>
+                <div class="pdp-price-row">
+                  <span class="pdp-price" id="pdpPrice">৳ —</span>
+                  <span class="pdp-data-tag" data-i18n="pdp.pricePending">Price to be confirmed</span>
+                </div>
+                <p class="pdp-rating-note" data-i18n="pdp.ratingPending">Rating not shown until verified product reviews are available.</p>
+                <p class="pdp-description" data-i18n="pdp.descriptionPending">Product description pending confirmation.</p>
+
+                <div class="pdp-variant">
+                  <span class="pdp-field-label" data-i18n="pdp.sizeWeight">Size / weight</span>
+                  <div class="pdp-variant__pending">
+                    <svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg>
+                    <span data-i18n="pdp.optionsPending">Verified size options will appear here.</span>
+                  </div>
+                </div>
+                <p class="pdp-stock">
+                  <span class="pdp-stock__mark" aria-hidden="true"></span>
+                  <span data-i18n="pdp.availabilityPending">Availability not connected in this preview.</span>
+                </p>
+
+                <div class="pdp-purchase">
+                  <div class="pdp-quantity-field">
+                    <span class="pdp-field-label" id="pdpQuantityLabel" data-i18n="pdp.quantity">Quantity</span>
+                    <div class="pdp-quantity" id="pdpQuantityGroup" role="group" aria-label="Quantity controls for this product" data-i18n-aria="pdp.quantityControls">
+                      <button type="button" id="pdpQuantityDecrease" aria-label="Decrease quantity" data-i18n-aria="pdp.quantityDecrease" disabled>−</button>
+                      <output id="pdpQuantityValue" aria-live="polite" aria-atomic="true">1</output>
+                      <button type="button" id="pdpQuantityIncrease" aria-label="Increase quantity" data-i18n-aria="pdp.quantityIncrease">+</button>
+                    </div>
+                  </div>
+                  <div class="pdp-actions">
+                    <button class="button button--primary" type="button" id="pdpAddToCart">
+                      <span data-i18n="pdp.addToCart">Add to Cart</span>
+                      <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+                    </button>
+                    <button class="button button--secondary" type="button" id="pdpBuyNow" data-i18n="pdp.buyNow">Buy Now</button>
+                  </div>
+                </div>
+                <p class="pdp-purchase-note" data-i18n="pdp.purchaseNote">Preview only — no order or payment is created.</p>
+                <div class="pdp-brand-note">
+                  <svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg>
+                  <span data-i18n="pdp.brandNote">Thoughtful essentials for your own way of creating.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="pdp-details">
+            <div class="pdp-details__inner section-wrap">
+              <div class="pdp-section-intro">
+                <p class="pdp-eyebrow" data-i18n="pdp.detailsEyebrow">A little more to know</p>
+                <h2 data-i18n="pdp.detailsTitle">Product details</h2>
+                <p data-i18n="pdp.detailsIntro">Product-specific information will be added after confirmation.</p>
+              </div>
+              <div class="pdp-detail-list">
+                <details class="pdp-detail" open>
+                  <summary>
+                    <span data-i18n="pdp.description">Description</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+                  </summary>
+                  <div class="pdp-detail__content">
+                    <span class="pdp-data-tag" data-i18n="pdp.pending">Confirmation pending</span>
+                    <p data-i18n="pdp.descriptionBody">Verified product description will appear here.</p>
+                  </div>
+                </details>
+                <details class="pdp-detail">
+                  <summary>
+                    <span data-i18n="pdp.ingredients">Ingredients</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+                  </summary>
+                  <div class="pdp-detail__content">
+                    <span class="pdp-data-tag" data-i18n="pdp.ingredientsPending">Ingredients not provided</span>
+                    <p data-i18n="pdp.ingredientsBody">The confirmed ingredient list will appear here.</p>
+                  </div>
+                </details>
+                <details class="pdp-detail" id="pdpUsage">
+                  <summary>
+                    <span data-i18n="pdp.usage">How to use</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+                  </summary>
+                  <div class="pdp-detail__content">
+                    <span class="pdp-data-tag" data-i18n="pdp.usagePending">Instructions not provided</span>
+                    <p data-i18n="pdp.usageBody">Confirmed product-specific instructions will appear here.</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </section>
+
+          <section class="pdp-reviews section-wrap" aria-labelledby="pdpReviewsTitle">
+            <div class="pdp-reviews__panel">
+              <div>
+                <p class="pdp-eyebrow" data-i18n="pdp.reviewsEyebrow">Customer feedback</p>
+                <h2 id="pdpReviewsTitle" data-i18n="pdp.reviewsTitle">Customer reviews</h2>
+                <p data-i18n="pdp.reviewsPending">Verified product reviews will appear here when available.</p>
+              </div>
+              <p class="pdp-reviews__status">
+                <svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg>
+                <span data-i18n="pdp.reviewDataPending">Review data pending</span>
+              </p>
+            </div>
+          </section>
+
+          <section class="pdp-related section-wrap" aria-labelledby="pdpRelatedTitle">
+            <div class="pdp-related__heading">
+              <div>
+                <p class="pdp-eyebrow" data-i18n="pdp.relatedEyebrow">From the collection</p>
+                <h2 id="pdpRelatedTitle" data-i18n="pdp.relatedTitle">Related products</h2>
+              </div>
+              <p data-i18n="pdp.relatedPending">Catalog matches and product details pending confirmation.</p>
+            </div>
+            <div class="pdp-related__grid" id="pdpRelatedProducts"></div>
+          </section>
+        </div>
+
+        <div class="pdp-not-found section-wrap" id="pdpNotFound" hidden>
+          <h1 id="pdpNotFoundTitle" tabindex="-1" data-i18n="pdp.notFoundTitle">Product not found</h1>
+          <p data-i18n="pdp.notFoundBody">This product is not available in the current catalog preview.</p>
+          <a class="button button--primary" href="#shop" data-i18n="pdp.backToShop">Back to the collection</a>
+        </div>
       </section>
     </main>
 

@@ -21,6 +21,10 @@ const translations = {
     "product.addAria.cones": "Add Mehendi Cones to bag",
     "product.addAria.kit": "Add The Slow Ritual Kit to bag",
     "product.addAria.fine": "Add Fine Sift Henna to bag",
+    "product.detailsAria.powder": "View Everyday Henna Powder details",
+    "product.detailsAria.cones": "View Mehendi Cones details",
+    "product.detailsAria.kit": "View The Slow Ritual Kit details",
+    "product.detailsAria.fine": "View Fine Sift Henna details",
     "hero.imageAlt": "Traditional mehendi designs on a pair of hands",
     "product.powderImageAlt": "Henna cone with a bowl of henna powder",
     "product.coneImageAlt": "Henna cone beside an intricately decorated hand",
@@ -74,6 +78,60 @@ const translations = {
     "product.detail.kit": "Everything for a slower afternoon",
     "product.detail.fine": "Small batch, sample description",
     "product.add": "Add",
+    "pdp.home": "Home",
+    "pdp.previewNote": "Product information is a visual preview; unverified details are marked.",
+    "pdp.imagePending": "Product image pending confirmation",
+    "pdp.imageNote": "Existing brand image",
+    "pdp.galleryLabel": "Product image gallery",
+    "pdp.category.powder": "POWDER",
+    "pdp.category.cones": "CONE",
+    "pdp.category.kit": "RITUAL SET",
+    "pdp.namePending": "Demo product name · confirmation pending",
+    "pdp.pricePending": "Price to be confirmed",
+    "pdp.ratingPending": "Rating not shown until verified product reviews are available.",
+    "pdp.descriptionPending": "Product description pending confirmation.",
+    "pdp.sizeWeight": "Size / weight",
+    "pdp.optionsPending": "Verified size options will appear here.",
+    "pdp.availabilityPending": "Availability not connected in this preview.",
+    "pdp.quantity": "Quantity",
+    "pdp.quantityControls": "Quantity controls for this product",
+    "pdp.quantityDecrease": "Decrease quantity for this product",
+    "pdp.quantityIncrease": "Increase quantity for this product",
+    "pdp.quantityFor": "Quantity for {product}",
+    "pdp.quantityDecreaseFor": "Decrease quantity for {product}",
+    "pdp.quantityIncreaseFor": "Increase quantity for {product}",
+    "pdp.galleryImageLabel": "Show product image {number} for {product}",
+    "pdp.relatedLink": "View {product} details",
+    "pdp.quantityError": "Please choose a valid quantity.",
+    "pdp.addToCart": "Add to Cart",
+    "pdp.buyNow": "Buy Now",
+    "pdp.purchaseNote": "Preview only — no order or payment is created.",
+    "pdp.brandNote": "Thoughtful essentials for your own way of creating.",
+    "pdp.detailsEyebrow": "A little more to know",
+    "pdp.detailsTitle": "Product details",
+    "pdp.detailsIntro": "Product-specific information will be added after confirmation.",
+    "pdp.description": "Description",
+    "pdp.pending": "Confirmation pending",
+    "pdp.descriptionBody": "Verified product description will appear here.",
+    "pdp.ingredients": "Ingredients",
+    "pdp.ingredientsPending": "Ingredients not provided",
+    "pdp.ingredientsBody": "The confirmed ingredient list will appear here.",
+    "pdp.usage": "How to use",
+    "pdp.usagePending": "Instructions not provided",
+    "pdp.usageBody": "Confirmed product-specific instructions will appear here.",
+    "pdp.reviewsEyebrow": "Customer feedback",
+    "pdp.reviewsTitle": "Customer reviews",
+    "pdp.reviewsPending": "Verified product reviews will appear here when available.",
+    "pdp.reviewDataPending": "Review data pending",
+    "pdp.relatedEyebrow": "From the collection",
+    "pdp.relatedTitle": "Related products",
+    "pdp.relatedPending": "Catalog matches and product details pending confirmation.",
+    "pdp.imageMappingPending": "Image mapping pending",
+    "pdp.relatedProductPending": "Verified product information pending",
+    "pdp.notFoundTitle": "Product not found",
+    "pdp.notFoundBody": "This product is not available in the current catalog preview.",
+    "pdp.backToShop": "Back to the collection",
+    "pdp.imageChanged": "Product image {number} selected.",
     "sample.note": "Sample products and prices for visual review only.",
     "search.empty": "No matching rituals yet. Try another word.",
     "search.results": "{count} products shown.",
@@ -176,6 +234,10 @@ const translations = {
     "product.addAria.cones": "মেহেদি কোন ব্যাগে যোগ করুন",
     "product.addAria.kit": "ধীর রীতির কিট ব্যাগে যোগ করুন",
     "product.addAria.fine": "মিহি চালের মেহেদি ব্যাগে যোগ করুন",
+    "product.detailsAria.powder": "দৈনন্দিন মেহেদি গুঁড়ার বিবরণ দেখুন",
+    "product.detailsAria.cones": "মেহেদি কোনের বিবরণ দেখুন",
+    "product.detailsAria.kit": "ধীর রীতির কিটের বিবরণ দেখুন",
+    "product.detailsAria.fine": "মিহি চালের মেহেদির বিবরণ দেখুন",
     "hero.imageAlt": "দুই হাতে ঐতিহ্যবাহী মেহেদির নকশা",
     "product.powderImageAlt": "মেহেদির গুঁড়ার বাটির পাশে মেহেদির কোন",
     "product.coneImageAlt": "নকশা করা হাতের পাশে মেহেদির কোন",
@@ -229,6 +291,60 @@ const translations = {
     "product.detail.kit": "ধীর দুপুরের জন্য সবকিছু",
     "product.detail.fine": "ছোট ব্যাচ, নমুনা বিবরণ",
     "product.add": "যোগ",
+    "pdp.home": "হোম",
+    "pdp.previewNote": "পণ্যের তথ্য ভিজ্যুয়াল প্রিভিউ; অনিশ্চিত তথ্য স্পষ্টভাবে চিহ্নিত।",
+    "pdp.imagePending": "পণ্যের ছবি নিশ্চিত করা হয়নি",
+    "pdp.imageNote": "বিদ্যমান ব্র্যান্ডের ছবি",
+    "pdp.galleryLabel": "পণ্যের ছবির গ্যালারি",
+    "pdp.category.powder": "গুঁড়া",
+    "pdp.category.cones": "কোন",
+    "pdp.category.kit": "রিচুয়াল সেট",
+    "pdp.namePending": "নমুনা পণ্যের নাম · নিশ্চিত করা বাকি",
+    "pdp.pricePending": "দাম নিশ্চিত করা বাকি",
+    "pdp.ratingPending": "যাচাইকৃত পণ্য-পর্যায়ের মতামত না থাকায় রেটিং দেখানো হচ্ছে না।",
+    "pdp.descriptionPending": "পণ্যের বিবরণ নিশ্চিত করা বাকি।",
+    "pdp.sizeWeight": "আকার / ওজন",
+    "pdp.optionsPending": "যাচাইকৃত আকারের বিকল্প এখানে দেখানো হবে।",
+    "pdp.availabilityPending": "এই প্রিভিউতে মজুতের তথ্য যুক্ত নেই।",
+    "pdp.quantity": "পরিমাণ",
+    "pdp.quantityControls": "পণ্যের পরিমাণ নিয়ন্ত্রণ",
+    "pdp.quantityDecrease": "এই পণ্যের পরিমাণ কমান",
+    "pdp.quantityIncrease": "এই পণ্যের পরিমাণ বাড়ান",
+    "pdp.quantityFor": "পণ্যের পরিমাণ: {product}",
+    "pdp.quantityDecreaseFor": "পরিমাণ কমান: {product}",
+    "pdp.quantityIncreaseFor": "পরিমাণ বাড়ান: {product}",
+    "pdp.galleryImageLabel": "{product}: পণ্যের ছবি {number} দেখুন",
+    "pdp.relatedLink": "{product} সম্পর্কে বিস্তারিত দেখুন",
+    "pdp.quantityError": "অনুগ্রহ করে সঠিক পরিমাণ বেছে নিন।",
+    "pdp.addToCart": "ব্যাগে যোগ করুন",
+    "pdp.buyNow": "এখনই কিনুন",
+    "pdp.purchaseNote": "শুধু প্রিভিউ · কোনো অর্ডার বা পেমেন্ট করা হয় না।",
+    "pdp.brandNote": "নিজের মতো করে সৃষ্টির জন্য যত্নে বেছে নেওয়া উপকরণ।",
+    "pdp.detailsEyebrow": "আরও কিছু জানুন",
+    "pdp.detailsTitle": "পণ্যের বিবরণ",
+    "pdp.detailsIntro": "নিশ্চিত হওয়ার পর পণ্যভিত্তিক তথ্য এখানে যোগ করা হবে।",
+    "pdp.description": "বিবরণ",
+    "pdp.pending": "নিশ্চিত করা বাকি",
+    "pdp.descriptionBody": "যাচাইকৃত পণ্যের বিবরণ এখানে দেখানো হবে।",
+    "pdp.ingredients": "উপাদান",
+    "pdp.ingredientsPending": "উপাদানের তথ্য দেওয়া হয়নি",
+    "pdp.ingredientsBody": "নিশ্চিত উপাদানের তালিকা এখানে দেখানো হবে।",
+    "pdp.usage": "ব্যবহারের নিয়ম",
+    "pdp.usagePending": "নির্দেশনা দেওয়া হয়নি",
+    "pdp.usageBody": "নিশ্চিত পণ্য-নির্দিষ্ট নির্দেশনা এখানে দেখানো হবে।",
+    "pdp.reviewsEyebrow": "ক্রেতাদের মতামত",
+    "pdp.reviewsTitle": "ক্রেতাদের মতামত",
+    "pdp.reviewsPending": "যাচাইকৃত পণ্য-পর্যায়ের মতামত পাওয়া গেলে এখানে দেখানো হবে।",
+    "pdp.reviewDataPending": "মতামতের তথ্য নিশ্চিত করা বাকি",
+    "pdp.relatedEyebrow": "সংগ্রহ থেকে",
+    "pdp.relatedTitle": "সম্পর্কিত পণ্য",
+    "pdp.relatedPending": "ক্যাটালগের মিল ও পণ্যের তথ্য নিশ্চিত করা বাকি।",
+    "pdp.imageMappingPending": "ছবির পণ্য-সংযোগ নিশ্চিত করা বাকি",
+    "pdp.relatedProductPending": "যাচাইকৃত পণ্যের তথ্য নিশ্চিত করা বাকি",
+    "pdp.notFoundTitle": "পণ্য পাওয়া যায়নি",
+    "pdp.notFoundBody": "এই প্রিভিউ ক্যাটালগে পণ্যটি নেই।",
+    "pdp.backToShop": "সংগ্রহে ফিরে যান",
+    "pdp.imageChanged": "পণ্যের ছবি {number} নির্বাচন করা হয়েছে।",
     "sample.note": "শুধু ভিজ্যুয়াল পর্যালোচনার জন্য নমুনা পণ্য ও দাম।",
     "search.empty": "মিল পাওয়া যায়নি। অন্য শব্দ দিয়ে চেষ্টা করুন।",
     "search.results": "{count}টি পণ্য দেখানো হচ্ছে।",
@@ -312,10 +428,10 @@ const translations = {
 };
 
 const products = {
-  powder: { price: 380, nameKey: "product.powder", image: "public/brand-assets/product-02.jpg", detail: "100 g" },
-  cones: { price: 350, nameKey: "product.cones", image: "public/brand-assets/product-01.png", detail: "3 pieces" },
-  kit: { price: 1250, nameKey: "product.kit", image: "public/brand-assets/mehndi-ceremony.jpg", detail: "4 pieces" },
-  fine: { price: 240, nameKey: "product.fine", image: "public/brand-assets/product-02.jpg", detail: "50 g" }
+  powder: { price: 380, nameKey: "product.powder", image: "public/brand-assets/product-02.jpg", imageAltKey: "product.powderImageAlt", imageWidth: 1086, imageHeight: 1448, detail: "100 g", categoryKey: "pdp.category.powder" },
+  cones: { price: 350, nameKey: "product.cones", image: "public/brand-assets/product-01.png", imageAltKey: "product.coneImageAlt", imageWidth: 1254, imageHeight: 1254, detail: "3 pieces", categoryKey: "pdp.category.cones" },
+  kit: { price: 1250, nameKey: "product.kit", image: "public/brand-assets/mehndi-ceremony.jpg", imageAltKey: "product.kitImageAlt", imageWidth: 960, imageHeight: 1620, detail: "4 pieces", categoryKey: "pdp.category.kit" },
+  fine: { price: 240, nameKey: "product.fine", image: "public/brand-assets/product-02.jpg", imageAltKey: "product.powderImageAlt", imageWidth: 1086, imageHeight: 1448, detail: "50 g", categoryKey: "pdp.category.powder" }
 };
 
 const cart = new Map();
@@ -332,10 +448,246 @@ let language = "en";
 let toastTimer;
 let inertPageElements = [];
 let languageInitialized = false;
+let activeProductKey = null;
+let productQuantity = 1;
+let openSearchAfterHomeNavigation = false;
+let searchOpenerAfterHomeNavigation = null;
+const homePageTitle = document.title;
 
 function formatPrice(amount) {
   const locale = language === "bn" ? "bn-BD" : "en-BD";
   return `৳${new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(amount)}`;
+}
+
+function getProductName(product) {
+  return translations[language][product.nameKey] || "";
+}
+
+function formatQuantity(quantity) {
+  const locale = language === "bn" ? "bn-BD" : "en-BD";
+  return new Intl.NumberFormat(locale).format(quantity);
+}
+
+function getProductImages(product) {
+  if (!product.image || !product.imageAltKey) return [];
+  return [{
+    src: product.image,
+    altKey: product.imageAltKey,
+    width: product.imageWidth,
+    height: product.imageHeight
+  }];
+}
+
+function renderProductGallery(product) {
+  const mainImage = document.querySelector("#pdpMainImage");
+  const imagePlaceholder = document.querySelector("#pdpImagePlaceholder");
+  const imageCaption = document.querySelector("#pdpImageCaption");
+  const thumbnails = document.querySelector("#pdpThumbnails");
+  const galleryStatus = document.querySelector("#pdpGalleryStatus");
+  const images = getProductImages(product);
+
+  thumbnails.replaceChildren();
+  galleryStatus.textContent = "";
+
+  if (!images.length) {
+    mainImage.hidden = true;
+    imagePlaceholder.hidden = false;
+    imageCaption.hidden = true;
+    return;
+  }
+
+  imagePlaceholder.hidden = true;
+  imageCaption.hidden = false;
+
+  function selectImage(index) {
+    const image = images[index];
+    mainImage.src = image.src;
+    mainImage.alt = translations[language][image.altKey];
+    mainImage.width = image.width;
+    mainImage.height = image.height;
+    mainImage.hidden = false;
+    thumbnails.querySelectorAll("button").forEach((button, buttonIndex) => {
+      button.setAttribute("aria-pressed", String(buttonIndex === index));
+    });
+    const locale = language === "bn" ? "bn-BD" : "en-BD";
+    const number = new Intl.NumberFormat(locale).format(index + 1);
+    galleryStatus.textContent = translations[language]["pdp.imageChanged"].replace("{number}", number);
+  }
+
+  images.forEach((image, index) => {
+    const button = document.createElement("button");
+    const thumbnailImage = document.createElement("img");
+    button.className = "pdp-gallery__thumb";
+    button.type = "button";
+    button.setAttribute("aria-label", translations[language]["pdp.galleryImageLabel"]
+      .replace("{number}", String(index + 1))
+      .replace("{product}", getProductName(product)));
+    button.setAttribute("aria-pressed", String(index === 0));
+    thumbnailImage.src = image.src;
+    thumbnailImage.alt = "";
+    thumbnailImage.width = image.width;
+    thumbnailImage.height = image.height;
+    thumbnailImage.loading = "lazy";
+    button.append(thumbnailImage);
+    button.addEventListener("click", () => selectImage(index));
+    thumbnails.append(button);
+  });
+
+  selectImage(0);
+}
+
+function renderRelatedProducts(currentKey) {
+  const container = document.querySelector("#pdpRelatedProducts");
+  const relatedProducts = Object.keys(products)
+    .filter((key) => key !== currentKey)
+    .slice(0, 3)
+    .map((key) => ({ key, product: products[key] }));
+
+  container.dataset.currentProductId = currentKey;
+  container.replaceChildren();
+  relatedProducts.forEach(({ key, product }) => {
+    const name = getProductName(product);
+    const card = document.createElement("article");
+    const link = document.createElement("a");
+    const imageFrame = document.createElement("div");
+    const image = getProductImages(product)[0];
+    const imageTag = document.createElement("span");
+    const details = document.createElement("div");
+    const nameHeading = document.createElement("h3");
+    const pendingText = document.createElement("p");
+    const price = document.createElement("span");
+
+    card.className = "pdp-related-card";
+    card.dataset.productId = key;
+    link.className = "pdp-related-card__link";
+    link.href = `#product/${key}`;
+    link.setAttribute("aria-label", translations[language]["pdp.relatedLink"].replace("{product}", name));
+    imageFrame.className = "pdp-related-card__image";
+
+    if (image) {
+      const photo = document.createElement("img");
+      photo.src = image.src;
+      photo.alt = translations[language][image.altKey];
+      photo.width = image.width;
+      photo.height = image.height;
+      photo.loading = "lazy";
+      imageFrame.append(photo);
+    } else {
+      const placeholder = document.createElement("span");
+      placeholder.className = "pdp-related-card__placeholder";
+      placeholder.textContent = translations[language]["pdp.imagePending"];
+      imageFrame.append(placeholder);
+    }
+
+    imageTag.className = "pdp-related-card__tag";
+    imageTag.textContent = translations[language]["pdp.namePending"];
+    imageFrame.append(imageTag);
+    details.className = "pdp-related-card__meta";
+    nameHeading.textContent = name;
+    pendingText.textContent = translations[language]["pdp.relatedProductPending"];
+    price.className = "pdp-related-card__price";
+    price.textContent = "৳ —";
+    price.setAttribute("aria-label", translations[language]["pdp.pricePending"]);
+    details.append(nameHeading, pendingText, price);
+    link.append(imageFrame, details);
+    card.append(link);
+    container.append(card);
+  });
+}
+
+function renderProductDetails(key) {
+  const product = products[key];
+  if (!product) return;
+
+  const name = getProductName(product);
+  document.querySelector("#productView").setAttribute("aria-labelledby", "pdpTitle");
+  document.querySelector("#pdpCategory").textContent = translations[language][product.categoryKey];
+  document.querySelector("#pdpTitle").textContent = name;
+  document.querySelector("#pdpBreadcrumbCategory").textContent = translations[language][product.categoryKey];
+  document.querySelector("#pdpBreadcrumbProduct").textContent = name;
+  document.querySelector("#pdpPrice").textContent = "৳ —";
+  document.querySelector("#pdpAddToCart").setAttribute("aria-label", translations[language][`product.addAria.${key}`]);
+  document.querySelector("#pdpQuantityGroup").setAttribute("aria-label", translations[language]["pdp.quantityFor"].replace("{product}", name));
+  document.querySelector("#pdpQuantityDecrease").setAttribute("aria-label", translations[language]["pdp.quantityDecreaseFor"].replace("{product}", name));
+  document.querySelector("#pdpQuantityIncrease").setAttribute("aria-label", translations[language]["pdp.quantityIncreaseFor"].replace("{product}", name));
+  document.title = `${name} — ${translations[language]["brand.name"]}`;
+  document.querySelector("#pdpQuantityValue").textContent = formatQuantity(productQuantity);
+  document.querySelector("#pdpQuantityDecrease").disabled = productQuantity <= 1;
+  renderProductGallery(product);
+  renderRelatedProducts(key);
+}
+
+function setMobileNavigationActive(isProductRoute) {
+  const isShopRoute = isProductRoute || window.location.hash === "#shop";
+  document.querySelectorAll(".mobile-dock a").forEach((link) => {
+    const isCurrent = isShopRoute ? link.hash === "#shop" : link.hash === "#top";
+    link.classList.toggle("is-current", isCurrent);
+    if (isCurrent) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+function handlePageRoute() {
+  const productRoutePrefix = "#product/";
+  const isProductRoute = window.location.hash.startsWith(productRoutePrefix);
+  const homeView = document.querySelector("#homeView");
+  const productView = document.querySelector("#productView");
+
+  if (isProductRoute) {
+    openSearchAfterHomeNavigation = false;
+    searchOpenerAfterHomeNavigation = null;
+    setMobileNavigationActive(true);
+    if (!searchPanel.hidden) closeSearch();
+    const key = window.location.hash.slice(productRoutePrefix.length);
+    const productExists = Object.prototype.hasOwnProperty.call(products, key);
+    const notFound = document.querySelector("#pdpNotFound");
+    const content = document.querySelector("#pdpContent");
+
+    homeView.hidden = true;
+    productView.hidden = false;
+    content.hidden = !productExists;
+    notFound.hidden = productExists;
+
+    if (productExists) {
+      if (activeProductKey !== key) productQuantity = 1;
+      activeProductKey = key;
+      renderProductDetails(key);
+      window.scrollTo(0, 0);
+      window.requestAnimationFrame(() => document.querySelector("#pdpTitle").focus({ preventScroll: true }));
+    } else {
+      activeProductKey = null;
+      productView.setAttribute("aria-labelledby", "pdpNotFoundTitle");
+      document.title = translations[language]["pdp.notFoundTitle"];
+      window.scrollTo(0, 0);
+      window.requestAnimationFrame(() => document.querySelector("#pdpNotFoundTitle").focus({ preventScroll: true }));
+    }
+    return;
+  }
+
+  const wasProductRoute = activeProductKey !== null || !productView.hidden;
+  activeProductKey = null;
+  setMobileNavigationActive(false);
+  productView.hidden = true;
+  homeView.hidden = false;
+  document.title = homePageTitle;
+
+  if (wasProductRoute && window.location.hash.length > 1) {
+    const targetId = window.location.hash.slice(1);
+    window.requestAnimationFrame(() => {
+      const target = document.getElementById(targetId);
+      if (target) target.scrollIntoView({ block: "start" });
+    });
+  }
+
+  if (openSearchAfterHomeNavigation) {
+    openSearchAfterHomeNavigation = false;
+    const opener = searchOpenerAfterHomeNavigation;
+    searchOpenerAfterHomeNavigation = null;
+    window.requestAnimationFrame(() => {
+      toggleSearch(true, opener);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 }
 
 function applyLanguage(nextLanguage) {
@@ -365,6 +717,7 @@ function applyLanguage(nextLanguage) {
   renderCart();
   updateProductResults(languageInitialized);
   languageInitialized = true;
+  if (activeProductKey) renderProductDetails(activeProductKey);
 }
 
 function showToast(message) {
@@ -436,6 +789,32 @@ function renderCart() {
   }).join("");
 }
 
+function addToCart(key, quantity) {
+  if (!Object.prototype.hasOwnProperty.call(products, key)) {
+    console.error(`Cannot add unknown product "${key}" to the cart.`);
+    showToast(translations[language]["pdp.notFoundBody"]);
+    return;
+  }
+  if (!Number.isSafeInteger(quantity) || quantity < 1) {
+    console.error(`Cannot add invalid quantity "${quantity}" for product "${key}".`);
+    showToast(translations[language]["pdp.quantityError"]);
+    return;
+  }
+
+  cart.set(key, (cart.get(key) || 0) + quantity);
+  renderCart();
+  const productName = getProductName(products[key]);
+  const locale = language === "bn" ? "bn-BD" : "en-BD";
+  const quantityPrefix = quantity > 1 ? `${new Intl.NumberFormat(locale).format(quantity)} × ` : "";
+  showToast(`${quantityPrefix}${productName} · ${translations[language]["toast.added"]}`);
+}
+
+function updateProductQuantity(nextQuantity) {
+  productQuantity = Math.max(1, nextQuantity);
+  document.querySelector("#pdpQuantityValue").textContent = formatQuantity(productQuantity);
+  document.querySelector("#pdpQuantityDecrease").disabled = productQuantity === 1;
+}
+
 document.querySelectorAll(".product-price").forEach((element) => {
   element.textContent = formatPrice(Number(element.dataset.price));
 });
@@ -444,12 +823,21 @@ languageSwitch.addEventListener("click", () => applyLanguage(language === "en" ?
 
 document.querySelectorAll("[data-add]").forEach((button) => {
   button.addEventListener("click", () => {
-    const key = button.dataset.add;
-    cart.set(key, (cart.get(key) || 0) + 1);
-    renderCart();
-    showToast(`${translations[language]["product." + key] || products[key].name} · ${translations[language]["toast.added"]}`);
+    addToCart(button.dataset.add, 1);
   });
 });
+
+document.querySelector("#pdpQuantityDecrease").addEventListener("click", () => updateProductQuantity(productQuantity - 1));
+document.querySelector("#pdpQuantityIncrease").addEventListener("click", () => updateProductQuantity(productQuantity + 1));
+document.querySelector("#pdpAddToCart").addEventListener("click", () => {
+  if (!activeProductKey) {
+    console.error("Cannot add a product before a valid product detail route is active.");
+    showToast(translations[language]["pdp.notFoundBody"]);
+    return;
+  }
+  addToCart(activeProductKey, productQuantity);
+});
+document.querySelector("#pdpBuyNow").addEventListener("click", () => showToast(translations[language]["toast.checkout"]));
 
 document.querySelector("#cartToggle").addEventListener("click", openCart);
 document.querySelector("#cartClose").addEventListener("click", closeCart);
@@ -504,10 +892,12 @@ const searchResultsStatus = document.querySelector("#searchResultsStatus");
 let activeCategory = "all";
 let searchOpener = null;
 
-function toggleSearch(open) {
+function toggleSearch(open, opener = null) {
   if (open) {
     if (searchPanel.hidden) {
-      searchOpener = document.activeElement === document.body ? searchToggle : document.activeElement;
+      if (opener && opener.isConnected && opener.getClientRects().length > 0) searchOpener = opener;
+      else if (document.activeElement === document.body) searchOpener = searchToggle;
+      else searchOpener = document.activeElement;
     }
     searchPanel.hidden = false;
     searchToggle.setAttribute("aria-expanded", "true");
@@ -544,8 +934,27 @@ function updateProductResults(announce = true) {
   }
 }
 
-searchToggle.addEventListener("click", () => toggleSearch(searchPanel.hidden));
+function openSearch() {
+  if (activeProductKey || !document.querySelector("#productView").hidden) {
+    openSearchAfterHomeNavigation = true;
+    searchOpenerAfterHomeNavigation = document.activeElement;
+    window.location.hash = "#shop";
+    return;
+  }
+  toggleSearch(true);
+}
+
+searchToggle.addEventListener("click", () => {
+  if (searchPanel.hidden) openSearch();
+  else toggleSearch(false);
+});
 document.querySelector("#mobileSearch").addEventListener("click", () => {
+  if (activeProductKey || !document.querySelector("#productView").hidden) {
+    openSearchAfterHomeNavigation = true;
+    searchOpenerAfterHomeNavigation = document.activeElement;
+    window.location.hash = "#shop";
+    return;
+  }
   toggleSearch(true);
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
@@ -589,3 +998,5 @@ document.querySelector("#newsletterForm").addEventListener("submit", (event) => 
 
 document.querySelector("#currentYear").textContent = String(new Date().getFullYear());
 applyLanguage(language);
+window.addEventListener("hashchange", handlePageRoute);
+handlePageRoute();

@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f2e9">
+    <meta name="description" content="Sobujer Ghran (সবুজের ঘ্রাণ) — Nature's Touch, Your Everyday Care.">
+    <title>Sobujer Ghran (সবুজের ঘ্রাণ) — Organic Mehendi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.75 12h14.5M13 5.75 19.25 12 13 18.25"/></symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5.5 8.25h13l1.1 11.5H4.4l1.1-11.5Z"/><path d="M8.5 8.25v-2a3.5 3.5 0 0 1 7 0v2"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.3"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M19.5 4.5C10 4 5 7.8 5 13.2c0 3.1 2.2 5.3 5.1 5.3 5.3 0 9.4-5.8 9.4-14Z"/><path d="M4 20c2.7-5 6.7-8.3 12-10.4"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2.8 1.9 6.3 6.3 1.9-6.3 1.9-1.9 6.3-1.9-6.3-6.3-1.9 6.3-1.9L12 2.8Z"/><path d="m19 16 .9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9L19 16Z"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    </svg>
+
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+    <div class="announcement">
+      <div class="announcement__inner">
+        <span class="announcement__leaf" aria-hidden="true"><svg class="icon"><use href="#i-leaf"></use></svg></span>
+        <p data-i18n="announcement">A little more nature in your everyday ritual.</p>
+        <button class="language-switch" id="languageSwitch" type="button" aria-label="Switch language">
+          <span data-i18n="language">বাংলা</span>
+          <svg class="icon icon--small" aria-hidden="true"><use href="#i-chevron"></use></svg>
+        </button>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="header__inner">
+        <a class="wordmark" href="#top" aria-label="Sobujer Ghran home" data-i18n-aria="brand.home">
+          <img class="wordmark__logo" src="public/brand-assets/logo.png" alt="">
+          <span class="wordmark__copy"><span class="wordmark__name" data-i18n="brand.name">Sobujer Ghran</span>
+          <span class="wordmark__descriptor" data-i18n="descriptor">ORGANIC MEHENDI</span></span>
+        </a>
+
+        <nav class="desktop-nav" id="primaryNav" aria-label="Primary navigation">
+          <a href="#shop" data-i18n="nav.shop">Shop</a>
+          <a href="#story" data-i18n="nav.story">Our story</a>
+          <a href="#ritual" data-i18n="nav.ritual">The ritual</a>
+          <a href="#faq" data-i18n="nav.faq">FAQs</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-button" id="searchToggle" type="button" aria-label="Search products" data-i18n-aria="search.aria" aria-expanded="false" aria-controls="searchPanel">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          </button>
+          <button class="icon-button account-link" id="accountPreview" type="button" aria-label="Customer account preview">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+          </button>
+          <button class="cart-button" id="cartToggle" type="button" aria-label="Open shopping bag" data-i18n-aria="cart.open">
+            <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+            <span class="cart-button__label" data-i18n="bag">Bag</span>
+            <span class="cart-count" id="cartCount" aria-label="0 items">0</span>
+          </button>
+          <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Open menu" data-i18n-aria="menu.open" aria-expanded="false" aria-controls="primaryNav">
+            <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="search-panel" id="searchPanel" hidden>
+        <label for="productSearch" data-i18n="search.label">Find your ritual</label>
+        <div class="search-panel__field">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input id="productSearch" type="search" autocomplete="off" placeholder="Try “henna powder”" data-i18n-placeholder="search.placeholder">
+          <button class="search-panel__close" id="searchClose" type="button" aria-label="Close search" data-i18n-aria="search.close">
+            <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-dock" aria-label="Mobile navigation">
+      <a href="#top" class="mobile-dock__item is-current">
+        <svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg><span data-i18n="mobile.home">Home</span>
+      </a>
+      <a href="#shop" class="mobile-dock__item">
+        <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg><span data-i18n="mobile.shop">Shop</span>
+      </a>
+      <button class="mobile-dock__item" id="mobileSearch" type="button">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span data-i18n="mobile.search">Search</span>
+      </button>
+      <button class="mobile-dock__item" id="accountMobile" type="button">
+        <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg><span data-i18n="mobile.account">Account</span>
+      </button>
+    </nav>
+
+    <main id="main">
+      <section class="hero section-wrap" id="top" aria-labelledby="heroTitle">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="hero.eyebrow">BOTANICAL MEHENDI · MADE FOR SLOW MOMENTS</span></p>
+          <h1 id="heroTitle"><span data-i18n="hero.line1">A little ritual.</span><br><em data-i18n="hero.line2">Rooted in nature.</em></h1>
+          <p class="hero__tagline" data-i18n="brand.tagline">Nature's Touch, Your Everyday Care.</p>
+          <p class="hero__description" data-i18n="hero.description">Make space for the simple pleasure of mehendi. Thoughtful essentials for the moments you want to make your own.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#shop"><span data-i18n="hero.cta">Explore the collection</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="text-link" href="#story"><span data-i18n="hero.secondary">A note from us</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero__note">
+            <div class="hero__note-mark"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg></div>
+            <p><strong data-i18n="hero.noteTitle">Made for your own pace</strong><span data-i18n="hero.note">A small pause. A little pattern. A moment that feels like yours.</span></p>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Mehendi inspiration">
+          <div class="hero__photo-frame">
+            <img src="public/brand-assets/mehndi-ceremony.jpg" alt="Traditional mehendi designs on a pair of hands" data-i18n-alt="hero.imageAlt" fetchpriority="high" width="960" height="1620">
+            <span class="hero__photo-caption"><span data-i18n="hero.photoCaption">THE ART OF MEHENDI</span><span>01 / 04</span></span>
+          </div>
+          <div class="hero__seal" aria-hidden="true"><span>LEAF</span><svg class="icon"><use href="#i-leaf"></use></svg><span>TO RITUAL</span></div>
+          <div class="hero__product-note">
+            <span class="hero__product-note-icon"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg></span>
+            <span><small data-i18n="hero.cardKicker">A MOMENT TO YOURSELF</small><strong data-i18n="hero.cardTitle">The mehendi ritual</strong></span>
+            <svg class="icon hero__product-note-arrow" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </div>
+          <span class="hero__ornament hero__ornament--one" aria-hidden="true"></span>
+          <span class="hero__ornament hero__ornament--two" aria-hidden="true"></span>
+        </div>
+      </section>
+
+      <section class="promise-strip" aria-label="Our approach">
+        <div class="promise-strip__inner">
+          <div class="promise"><svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg><span data-i18n="promise.ingredients">Ingredients, clearly shared</span></div>
+          <span class="promise-separator" aria-hidden="true"></span>
+          <div class="promise"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg><span data-i18n="promise.care">Care notes at every step</span></div>
+          <span class="promise-separator" aria-hidden="true"></span>
+          <div class="promise"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg><span data-i18n="promise.checkout">A clear, considered checkout</span></div>
+        </div>
+      </section>
+
+      <section class="shop-section section-wrap section-space" id="shop" aria-labelledby="shopTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="shop.eyebrow">THE MEHENDI EDIT</span></p>
+            <h2 id="shopTitle"><span data-i18n="shop.titleStart">Little things for</span> <em data-i18n="shop.titleEnd">lovely rituals.</em></h2>
+          </div>
+          <a class="text-link section-heading__link" href="#shop"><span data-i18n="shop.link">View all essentials</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <div class="product-toolbar">
+          <p data-i18n="shop.subheading">Considered essentials, chosen for your own way of creating.</p>
+          <div class="filter-list" role="group" aria-label="Filter products">
+            <button class="filter-chip is-selected" type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">All</button>
+            <button class="filter-chip" type="button" data-filter="powder" aria-pressed="false" data-i18n="filter.powder">Powder</button>
+            <button class="filter-chip" type="button" data-filter="cones" aria-pressed="false" data-i18n="filter.cones">Cones</button>
+            <button class="filter-chip" type="button" data-filter="sets" aria-pressed="false" data-i18n="filter.sets">Ritual sets</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-category="powder" data-search="henna powder everyday">
+            <a class="product-card__image product-card__image--powder" href="#story" aria-label="View Everyday Henna Powder">
+              <span class="product-card__badge" data-i18n="product.badge.bestseller">A LITTLE FAVOURITE</span>
+              <img src="public/brand-assets/product-02.jpg" alt="Henna cone with a bowl of henna powder" data-i18n-alt="product.powderImageAlt" loading="lazy" width="1086" height="1448">
+              <span class="product-card__quick" data-i18n="product.view">Discover</span>
+            </a>
+            <div class="product-card__details">
+              <div><p class="product-card__type" data-i18n="product.type.powder">POWDER · 100 G</p><h3 data-i18n="product.powder">Everyday Henna Powder</h3></div>
+              <span class="product-price" data-price="380"></span>
+            </div>
+            <div class="product-card__footer"><span data-i18n="product.detail.powder">For the ritual you return to</span><button class="add-button" type="button" data-add="powder" aria-label="Add Everyday Henna Powder to bag" data-i18n-aria="product.addAria.powder"><span data-i18n="product.add">Add</span><span aria-hidden="true">+</span></button></div>
+          </article>
+
+          <article class="product-card" data-category="cones" data-search="henna cone mehendi">
+            <a class="product-card__image product-card__image--cone" href="#ritual" aria-label="View Mehendi Cones">
+              <span class="product-card__badge product-card__badge--quiet" data-i18n="product.badge.ready">READY TO CREATE</span>
+              <img src="public/brand-assets/product-01.png" alt="Henna cone beside an intricately decorated hand" data-i18n-alt="product.coneImageAlt" loading="lazy" width="1254" height="1254">
+              <span class="product-card__quick" data-i18n="product.view">Discover</span>
+            </a>
+            <div class="product-card__details">
+              <div><p class="product-card__type" data-i18n="product.type.cones">CONE SET · 3 PIECES</p><h3 data-i18n="product.cones">Mehendi Cones, Set of 3</h3></div>
+              <span class="product-price" data-price="350"></span>
+            </div>
+            <div class="product-card__footer"><span data-i18n="product.detail.cones">A little line, a lot of possibility</span><button class="add-button" type="button" data-add="cones" aria-label="Add Mehendi Cones to bag" data-i18n-aria="product.addAria.cones"><span data-i18n="product.add">Add</span><span aria-hidden="true">+</span></button></div>
+          </article>
+
+          <article class="product-card" data-category="sets" data-search="ritual kit henna set">
+            <a class="product-card__image product-card__image--kit" href="#ritual" aria-label="View The Slow Ritual Kit">
+              <span class="product-card__badge" data-i18n="product.badge.gift">A THOUGHTFUL GIFT</span>
+              <img src="public/brand-assets/mehndi-ceremony.jpg" alt="Hands decorated with traditional mehendi" data-i18n-alt="product.kitImageAlt" loading="lazy" width="960" height="1620">
+              <span class="product-card__quick" data-i18n="product.view">Discover</span>
+            </a>
+            <div class="product-card__details">
+              <div><p class="product-card__type" data-i18n="product.type.kit">RITUAL SET · 4 PIECES</p><h3 data-i18n="product.kit">The Slow Ritual Kit</h3></div>
+              <span class="product-price" data-price="1250"></span>
+            </div>
+            <div class="product-card__footer"><span data-i18n="product.detail.kit">Everything for a slower afternoon</span><button class="add-button" type="button" data-add="kit" aria-label="Add The Slow Ritual Kit to bag" data-i18n-aria="product.addAria.kit"><span data-i18n="product.add">Add</span><span aria-hidden="true">+</span></button></div>
+          </article>
+
+          <article class="product-card" data-category="powder" data-search="henna powder detail fine">
+            <a class="product-card__image product-card__image--detail" href="#story" aria-label="View Fine Sift Henna">
+              <span class="product-card__badge product-card__badge--quiet" data-i18n="product.badge.detail">THE LITTLE DETAILS</span>
+              <img src="public/brand-assets/product-02.jpg" alt="Henna cone with a bowl of henna powder" data-i18n-alt="product.powderImageAlt" loading="lazy" width="1086" height="1448">
+              <span class="product-card__quick" data-i18n="product.view">Discover</span>
+            </a>
+            <div class="product-card__details">
+              <div><p class="product-card__type" data-i18n="product.type.fine">POWDER · 50 G</p><h3 data-i18n="product.fine">Fine Sift Henna</h3></div>
+              <span class="product-price" data-price="240"></span>
+            </div>
+            <div class="product-card__footer"><span data-i18n="product.detail.fine">Small batch, sample description</span><button class="add-button" type="button" data-add="fine" aria-label="Add Fine Sift Henna to bag" data-i18n-aria="product.addAria.fine"><span data-i18n="product.add">Add</span><span aria-hidden="true">+</span></button></div>
+          </article>
+        </div>
+        <p class="empty-search" id="emptySearch" hidden data-i18n="search.empty">No matching rituals yet. Try another word.</p>
+        <p class="sample-note" data-i18n="sample.note">Sample products and prices for visual review only.</p>
+      </section>
+
+      <section class="story-section" id="story" aria-labelledby="storyTitle">
+        <div class="story-section__inner section-wrap">
+          <div class="story-photo">
+            <img src="public/brand-assets/product-02.jpg" alt="Henna cone with a bowl of henna powder" data-i18n-alt="story.imageAlt" loading="lazy" width="1086" height="1448">
+            <div class="story-photo__caption"><svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg><span data-i18n="story.imageCaption">A ritual, in the making</span></div>
+            <span class="story-photo__number" aria-hidden="true">01</span>
+          </div>
+          <div class="story-copy">
+            <p class="eyebrow eyebrow--light"><span class="eyebrow__rule"></span><span data-i18n="story.eyebrow">A NOTE FROM US</span></p>
+            <h2 id="storyTitle"><span data-i18n="story.titleStart">Beauty in the</span> <em data-i18n="story.titleEnd">in-between.</em></h2>
+            <p class="story-copy__lead" data-i18n="story.lead">The quiet before the celebration. The hands that make something by hand. The small ritual that brings you back to yourself.</p>
+            <p class="story-copy__body" data-i18n="story.body">Sobujer Ghran is a Bangladesh-based organic mehendi brand that connects nature's beauty and traditional mehendi with everyday care.</p>
+            <a class="button button--light" href="#ritual"><span data-i18n="story.cta">Explore the ritual</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <div class="story-signoff"><span class="story-signoff__line"></span><span data-i18n="story.signoff">With care, Sobujer Ghran</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ritual-section section-wrap section-space" id="ritual" aria-labelledby="ritualTitle">
+        <div class="section-heading section-heading--center">
+          <div>
+            <p class="eyebrow eyebrow--center"><span class="eyebrow__rule"></span><span data-i18n="ritual.eyebrow">A FEW SIMPLE STEPS</span><span class="eyebrow__rule"></span></p>
+            <h2 id="ritualTitle"><span data-i18n="ritual.titleStart">Make a little room</span> <em data-i18n="ritual.titleEnd">for ritual.</em></h2>
+            <p class="section-heading__description" data-i18n="ritual.description">A gentle starting point. Always follow the instructions for the product you choose.</p>
+          </div>
+        </div>
+        <div class="ritual-steps">
+          <article class="ritual-step">
+            <span class="ritual-step__number">01</span>
+            <span class="ritual-step__icon"><svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg></span>
+            <h3 data-i18n="ritual.step1.title">Make a little space</h3>
+            <p data-i18n="ritual.step1.body">Gather your chosen mehendi and the tools named in its preparation guide.</p>
+            <span class="ritual-step__foot">FIRST, THE PREPARATION</span>
+          </article>
+          <article class="ritual-step ritual-step--featured">
+            <span class="ritual-step__number">02</span>
+            <span class="ritual-step__icon"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg></span>
+            <h3 data-i18n="ritual.step2.title">Take your time</h3>
+            <p data-i18n="ritual.step2.body">Follow the product directions and let the moment move at its own pace.</p>
+            <span class="ritual-step__foot">THEN, A LITTLE PAUSE</span>
+          </article>
+          <article class="ritual-step">
+            <span class="ritual-step__number">03</span>
+            <span class="ritual-step__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+            <h3 data-i18n="ritual.step3.title">Create your pattern</h3>
+            <p data-i18n="ritual.step3.body">Apply with care, and use the aftercare guidance supplied with your product.</p>
+            <span class="ritual-step__foot">FINALLY, YOUR OWN MARK</span>
+          </article>
+        </div>
+        <p class="ritual-disclaimer" data-i18n="ritual.disclaimer">Illustrative steps only. Product preparation, application, and aftercare instructions must be confirmed for each item.</p>
+      </section>
+
+      <section class="review-section" aria-labelledby="reviewTitle">
+        <div class="review-section__inner section-wrap">
+          <div class="review-intro">
+            <p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="review.eyebrow">KIND WORDS, PLACEHOLDER EDITION</span></p>
+            <h2 id="reviewTitle"><span data-i18n="review.titleStart">A little love</span> <em data-i18n="review.titleEnd">goes a long way.</em></h2>
+            <p data-i18n="review.description">These sample quotes show where verified customer feedback can live.</p>
+            <a class="text-link" href="#shop"><span data-i18n="review.cta">Find your favourite</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <div class="review-pager" aria-hidden="true"><span class="review-pager__active"></span><span></span><span></span></div>
+          </div>
+          <div class="review-cards">
+            <figure class="review-card review-card--one">
+              <div class="review-card__stars" aria-label="Five out of five sample stars" data-i18n-aria="review.stars"><span>★★★★★</span><small data-i18n="review.sample">SAMPLE REVIEW</small></div>
+              <blockquote data-i18n="review.quote1">“The whole ritual felt like a little gift to myself. I loved having clear steps to follow.”</blockquote>
+              <figcaption><span class="review-avatar">A</span><span><strong data-i18n="review.name1">Ayesha R.</strong><small data-i18n="review.location1">Dhaka · sample customer</small></span><span class="review-card__mark">“</span></figcaption>
+            </figure>
+            <figure class="review-card review-card--two">
+              <div class="review-card__stars" aria-label="Five out of five sample stars" data-i18n-aria="review.stars"><span>★★★★★</span><small data-i18n="review.sample">SAMPLE REVIEW</small></div>
+              <blockquote data-i18n="review.quote2">“A thoughtful little set and the kind of details that make a product feel special.”</blockquote>
+              <figcaption><span class="review-avatar review-avatar--clay">S</span><span><strong data-i18n="review.name2">Samira N.</strong><small data-i18n="review.location2">Chattogram · sample customer</small></span><span class="review-card__mark">“</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section section-wrap section-space" id="faq" aria-labelledby="faqTitle">
+        <div class="faq-intro">
+          <p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="faq.eyebrow">A FEW THINGS TO KNOW</span></p>
+          <h2 id="faqTitle"><span data-i18n="faq.titleStart">Good to know,</span> <em data-i18n="faq.titleEnd">before you begin.</em></h2>
+          <p data-i18n="faq.description">Need a hand? These sample answers will be updated with your real product and delivery details.</p>
+          <a class="text-link" href="#footer"><span data-i18n="faq.contact">Get in touch</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary><span data-i18n="faq.q1">How do I prepare my mehendi?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+            <p data-i18n="faq.a1">Preparation varies by product. Follow the directions supplied with the item you choose; the ritual steps above are illustrative only.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n="faq.q2">Where can I see delivery charges?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+            <p data-i18n="faq.a2">In the finished store, delivery availability, estimated timing, and any charge should be shown for your area before you place an order.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n="faq.q3">Which payment methods will be available?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+            <p data-i18n="faq.a3">bKash, Nagad, cards, and Cash on Delivery are possibilities, subject to merchant integration and service coverage. This visual prototype does not process payments.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n="faq.q4">Can I make an order without an account?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+            <p data-i18n="faq.a4">The proposed store experience supports guest checkout. Account, order, and delivery features are not connected in this prototype.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="newsletter section-wrap" aria-labelledby="newsletterTitle">
+        <div class="newsletter__ornament" aria-hidden="true"><svg class="icon"><use href="#i-leaf"></use></svg></div>
+        <div class="newsletter__copy">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__rule"></span><span data-i18n="newsletter.eyebrow">A NOTE, NOW AND THEN</span></p>
+          <h2 id="newsletterTitle"><span data-i18n="newsletter.titleStart">A little beauty</span> <em data-i18n="newsletter.titleEnd">in your inbox.</em></h2>
+          <p data-i18n="newsletter.description">Occasional rituals, thoughtful notes, and new things from Sobujer Ghran.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <label class="sr-only" for="newsletterEmail" data-i18n="newsletter.label">Your email address</label>
+          <input id="newsletterEmail" type="email" placeholder="Your email address" autocomplete="email" required data-i18n-placeholder="newsletter.placeholder">
+          <button class="button button--light" type="submit"><span data-i18n="newsletter.cta">Join the list</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          <p data-i18n="newsletter.fineprint">Demo form only — nothing is sent or stored.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+      <div class="footer-main section-wrap">
+        <div class="footer-brand">
+          <a class="wordmark wordmark--footer" href="#top" aria-label="Sobujer Ghran home" data-i18n-aria="brand.home">
+            <img class="wordmark__logo" src="public/brand-assets/logo.png" alt="">
+            <span class="wordmark__copy"><span class="wordmark__name" data-i18n="brand.name">Sobujer Ghran</span>
+            <span class="wordmark__descriptor" data-i18n="descriptor">ORGANIC MEHENDI</span></span>
+          </a>
+          <p data-i18n="footer.tagline">Nature's Touch, Your Everyday Care.</p>
+          <a class="footer-email" href="mailto:hello@example.com">hello@example.com <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="footer-column">
+          <h2 data-i18n="footer.shop">THE COLLECTION</h2>
+          <a href="#shop" data-i18n="nav.shop">Shop</a>
+          <a href="#shop" data-i18n="filter.powder">Powder</a>
+          <a href="#shop" data-i18n="filter.cones">Cones</a>
+          <a href="#shop" data-i18n="filter.sets">Ritual sets</a>
+        </div>
+        <div class="footer-column">
+          <h2 data-i18n="footer.help">HERE TO HELP</h2>
+          <a href="#faq" data-i18n="nav.faq">FAQs</a>
+          <a href="#ritual" data-i18n="nav.ritual">The ritual</a>
+          <a href="#story" data-i18n="nav.story">Our story</a>
+          <a href="#faq" data-i18n="footer.delivery">Delivery & returns</a>
+        </div>
+        <div class="footer-payment">
+          <h2 data-i18n="footer.payment">PAYMENT OPTIONS TO CONFIRM</h2>
+          <div class="payment-chips" aria-label="Potential payment options, subject to merchant setup">
+            <span>bKash</span><span>Nagad</span><span>Cards</span><span>COD</span>
+          </div>
+          <p data-i18n="footer.paymentNote">Shown as possibilities only; final methods depend on merchant integration.</p>
+        </div>
+      </div>
+      <div class="footer-bottom section-wrap">
+        <p data-i18n="footer.demo">Preview only · Product names, prices, contact details, and reviews are placeholders.</p>
+        <span>© <span id="currentYear"></span> <span data-i18n="footer.rights">Sobujer Ghran</span></span>
+      </div>
+    </footer>
+
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-modal="true" role="dialog" aria-hidden="true" inert>
+      <div class="cart-drawer__head">
+        <div><p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="cart.kicker">YOUR SELECTION</span></p><h2 id="cartTitle" data-i18n="cart.title">Your bag</h2></div>
+        <button class="icon-button" id="cartClose" type="button" aria-label="Close shopping bag" data-i18n-aria="cart.close"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty">
+        <span class="cart-empty__icon"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg></span>
+        <h3 data-i18n="cart.emptyTitle">A little room for something lovely.</h3>
+        <p data-i18n="cart.emptyBody">Your bag is waiting for its first ritual.</p>
+        <a class="button button--primary" href="#shop" id="continueShopping" data-i18n="cart.continue">Explore the collection</a>
+      </div>
+      <div class="cart-drawer__bottom" id="cartBottom" hidden>
+        <div class="cart-subtotal"><span data-i18n="cart.subtotal">Subtotal</span><strong id="cartSubtotal">৳0</strong></div>
+        <p data-i18n="cart.shipping">Delivery and payment options would be confirmed at checkout.</p>
+        <button class="button button--primary button--full" id="checkoutPreview" type="button"><span data-i18n="cart.checkout">Continue to checkout</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+        <span class="cart-demo-note" data-i18n="cart.demo">Preview only · no order or payment is submitted</span>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

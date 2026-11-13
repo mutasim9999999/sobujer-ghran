@@ -195,6 +195,88 @@ const translations = {
     "footer.paymentNote": "Shown as possibilities only; final methods depend on merchant integration.",
     "footer.demo": "Preview only · Product names, prices, contact details, and reviews are placeholders.",
     "footer.rights": "Sobujer Ghran",
+    "checkout.documentTitle": "Checkout — Sobujer Ghran",
+    "checkout.home": "Home",
+    "checkout.label": "Checkout",
+    "checkout.eyebrow": "A THOUGHTFUL FINAL CHECK",
+    "checkout.heading.details": "A thoughtful final check.",
+    "checkout.heading.review": "Review your order",
+    "checkout.heading.confirmation": "Checkout preview complete",
+    "checkout.heading.empty": "Your bag is waiting.",
+    "checkout.description.details": "A few details for this visual checkout journey.",
+    "checkout.description.review": "Take a moment to review the details and sample amounts.",
+    "checkout.description.confirmation": "This frontend demonstration has reached its final screen.",
+    "checkout.description.empty": "There are no items to review in your bag.",
+    "checkout.progress.label": "Checkout progress",
+    "checkout.progress.details": "Your details",
+    "checkout.progress.review": "Review",
+    "checkout.progress.done": "Done",
+    "checkout.details.title": "Delivery details",
+    "checkout.details.intro": "Please enter the information you'd like to review.",
+    "checkout.required": "Required",
+    "checkout.name.label": "Full name",
+    "checkout.name.placeholder": "Your full name",
+    "checkout.name.required": "Please enter your full name.",
+    "checkout.name.length": "Full name must be between 2 and 80 characters.",
+    "checkout.name.format": "Use Bangla or English letters with spaces, hyphens, apostrophes, or dots only.",
+    "checkout.phone.label": "Phone number",
+    "checkout.phone.placeholder": "Phone number",
+    "checkout.phone.hint": "Use the number you'd like the shop to contact.",
+    "checkout.phone.required": "Please enter your phone number.",
+    "checkout.phone.invalid": "Enter a valid 11-digit Bangladeshi mobile number beginning 013–019, or use +880 followed by the remaining 10 digits.",
+    "checkout.address.label": "Full delivery address",
+    "checkout.address.placeholder": "Full delivery address",
+    "checkout.address.hint": "Include the details you want to see in the order review.",
+    "checkout.address.required": "Please enter your full delivery address.",
+    "checkout.address.tooShort": "Enter at least 10 characters for the delivery address.",
+    "checkout.address.tooLong": "Delivery address must be 500 characters or fewer.",
+    "checkout.deliveryArea.label": "Delivery area",
+    "checkout.deliveryArea.choose": "Choose your delivery area",
+    "checkout.deliveryArea.insideDhaka": "Inside Dhaka",
+    "checkout.deliveryArea.outsideDhaka": "Outside Dhaka",
+    "checkout.deliveryArea.hint": "Delivery charges depend on the area you select.",
+    "checkout.deliveryArea.required": "Please choose a delivery area.",
+    "checkout.note.label": "Order note",
+    "checkout.optional": "(optional)",
+    "checkout.note.placeholder": "Optional note",
+    "checkout.note.hint": "Optional. Maximum 500 characters.",
+    "checkout.note.tooLong": "Order note exceeds the 500-character limit. Please shorten it to continue.",
+    "checkout.validation.summary": "Please correct the highlighted fields.",
+    "checkout.privacy": "Frontend demonstration only. Details entered here are not sent or stored.",
+    "checkout.validationNote": "These checks support this preview only; a future backend must enforce the same rules independently.",
+    "checkout.review.title": "Your details",
+    "checkout.review.intro": "Check the information shown in this demonstration.",
+    "checkout.previewOnly": "PREVIEW ONLY",
+    "checkout.notEntered": "Not entered in this demonstration",
+    "checkout.noNote": "No note entered",
+    "checkout.review.note": "No order is sent or saved from this frontend demonstration.",
+    "checkout.review.callout": "Review your delivery area and calculated total before continuing.",
+    "checkout.review.cartChanged": "Your bag changed. Review the updated products, quantities, and subtotal before continuing.",
+    "checkout.review.cartChangedRead": "Updated order reviewed. You may now complete this frontend demonstration.",
+    "checkout.summary.title": "Your selection",
+    "checkout.demoPrices": "DEMO PRICES",
+    "checkout.summary.quantity": "Qty",
+    "checkout.subtotal": "Subtotal",
+    "checkout.delivery": "Delivery charge",
+    "checkout.grandTotal": "Grand total",
+    "checkout.toBeConfirmed": "To be confirmed",
+    "checkout.deliveryNote": "Delivery charge is calculated from your selected area.",
+    "checkout.demoNotice": "Sample product prices only. No order or payment is created.",
+    "checkout.action.back": "Back to the collection",
+    "checkout.action.review": "Review order",
+    "checkout.action.edit": "Edit details",
+    "checkout.action.complete": "Complete demo checkout",
+    "checkout.action.reviewUpdated": "Review updated order",
+    "checkout.continueShopping": "Continue shopping",
+    "checkout.confirmation.eyebrow": "A FRONTEND DEMONSTRATION",
+    "checkout.confirmation.title": "Checkout preview complete",
+    "checkout.confirmation.lead": "A considered final screen, with no real order behind it.",
+    "checkout.confirmation.message": "No order was submitted or saved, no payment was taken, and no order number was created.",
+    "checkout.confirmation.notice": "This is only a frontend demonstration. Product prices and delivery charges are samples; no order was placed.",
+    "checkout.empty.eyebrow": "A LITTLE ROOM FOR RITUAL",
+    "checkout.empty.title": "Your bag is waiting.",
+    "checkout.empty.message": "There are no items to review. Products in your bag will appear here.",
+    "checkout.empty.returnToBag": "Return to your bag",
     "cart.kicker": "YOUR SELECTION",
     "cart.title": "Your bag",
     "cart.emptyTitle": "A little room for something lovely.",
@@ -410,6 +492,88 @@ const translations = {
     "footer.paymentNote": "শুধু সম্ভাব্য পদ্ধতি; চূড়ান্ত পদ্ধতি মার্চেন্ট ইন্টিগ্রেশনের ওপর নির্ভরশীল।",
     "footer.demo": "প্রিভিউ · পণ্যের নাম, দাম, যোগাযোগের তথ্য ও মতামত নমুনা।",
     "footer.rights": "সবুজের ঘ্রাণ",
+    "checkout.documentTitle": "চেকআউট — সবুজের ঘ্রাণ",
+    "checkout.home": "হোম",
+    "checkout.label": "চেকআউট",
+    "checkout.eyebrow": "শেষবারের মতো যত্নে দেখে নিন",
+    "checkout.heading.details": "শেষবারের মতো যত্নে দেখে নিন।",
+    "checkout.heading.review": "আপনার অর্ডার পর্যালোচনা",
+    "checkout.heading.confirmation": "চেকআউট প্রিভিউ সম্পন্ন",
+    "checkout.heading.empty": "আপনার ব্যাগ অপেক্ষায় আছে।",
+    "checkout.description.details": "এই ভিজ্যুয়াল চেকআউট যাত্রার জন্য কয়েকটি তথ্য।",
+    "checkout.description.review": "তথ্য ও নমুনা পরিমাণগুলো একবার দেখে নিন।",
+    "checkout.description.confirmation": "এই ফ্রন্টএন্ড প্রদর্শনীর শেষ দৃশ্য।",
+    "checkout.description.empty": "আপনার ব্যাগে পর্যালোচনার জন্য কোনো পণ্য নেই।",
+    "checkout.progress.label": "চেকআউটের ধাপ",
+    "checkout.progress.details": "আপনার তথ্য",
+    "checkout.progress.review": "পর্যালোচনা",
+    "checkout.progress.done": "সম্পন্ন",
+    "checkout.details.title": "ডেলিভারির তথ্য",
+    "checkout.details.intro": "যে তথ্যগুলো পর্যালোচনা করতে চান, সেগুলো লিখুন।",
+    "checkout.required": "আবশ্যক",
+    "checkout.name.label": "পুরো নাম",
+    "checkout.name.placeholder": "আপনার পুরো নাম",
+    "checkout.name.required": "অনুগ্রহ করে আপনার পুরো নাম লিখুন।",
+    "checkout.name.length": "পুরো নাম ২ থেকে ৮০ অক্ষরের মধ্যে হতে হবে।",
+    "checkout.name.format": "বাংলা বা ইংরেজি অক্ষরের সঙ্গে শব্দের ফাঁক, হাইফেন, অ্যাপোস্ট্রফি বা ডট ব্যবহার করুন।",
+    "checkout.phone.label": "ফোন নম্বর",
+    "checkout.phone.placeholder": "ফোন নম্বর",
+    "checkout.phone.hint": "দোকান থেকে যোগাযোগের জন্য যে নম্বরটি দিতে চান।",
+    "checkout.phone.required": "অনুগ্রহ করে আপনার ফোন নম্বর লিখুন।",
+    "checkout.phone.invalid": "১১ অঙ্কের বাংলাদেশি মোবাইল নম্বর লিখুন (০১৩–০১৯ দিয়ে শুরু), অথবা +880 ফরম্যাট ব্যবহার করুন।",
+    "checkout.address.label": "সম্পূর্ণ ডেলিভারি ঠিকানা",
+    "checkout.address.placeholder": "সম্পূর্ণ ডেলিভারি ঠিকানা",
+    "checkout.address.hint": "অর্ডার পর্যালোচনায় যে ঠিকানার তথ্য দেখতে চান তা লিখুন।",
+    "checkout.address.required": "অনুগ্রহ করে সম্পূর্ণ ডেলিভারি ঠিকানা লিখুন।",
+    "checkout.address.tooShort": "ডেলিভারি ঠিকানা কমপক্ষে ১০ অক্ষরের লিখুন।",
+    "checkout.address.tooLong": "ডেলিভারি ঠিকানা ৫০০ অক্ষর বা তার কম হতে হবে।",
+    "checkout.deliveryArea.label": "ডেলিভারি এলাকা",
+    "checkout.deliveryArea.choose": "ডেলিভারি এলাকা নির্বাচন করুন",
+    "checkout.deliveryArea.insideDhaka": "ঢাকার ভেতরে",
+    "checkout.deliveryArea.outsideDhaka": "ঢাকার বাইরে",
+    "checkout.deliveryArea.hint": "নির্বাচিত এলাকার ওপর ডেলিভারি চার্জ নির্ভর করে।",
+    "checkout.deliveryArea.required": "অনুগ্রহ করে ডেলিভারি এলাকা নির্বাচন করুন।",
+    "checkout.note.label": "অর্ডার নোট",
+    "checkout.optional": "(ঐচ্ছিক)",
+    "checkout.note.placeholder": "ঐচ্ছিক নোট",
+    "checkout.note.hint": "ঐচ্ছিক। সর্বোচ্চ ৫০০ অক্ষর।",
+    "checkout.note.tooLong": "অর্ডার নোট ৫০০ অক্ষরের বেশি। চালিয়ে যেতে নোটটি সংক্ষিপ্ত করুন।",
+    "checkout.validation.summary": "চিহ্নিত তথ্যগুলো ঠিক করে দিন।",
+    "checkout.privacy": "শুধু ফ্রন্টএন্ড প্রদর্শনী। এখানে লেখা তথ্য পাঠানো বা সংরক্ষণ করা হয় না।",
+    "checkout.validationNote": "এই যাচাই শুধু প্রিভিউয়ের জন্য; ভবিষ্যৎ ব্যাকএন্ডে একই নিয়ম আলাদাভাবে কার্যকর করতে হবে।",
+    "checkout.review.title": "আপনার তথ্য",
+    "checkout.review.intro": "এই প্রদর্শনীতে দেখানো তথ্যগুলো যাচাই করুন।",
+    "checkout.previewOnly": "শুধু প্রিভিউ",
+    "checkout.notEntered": "এই প্রদর্শনীতে লেখা হয়নি",
+    "checkout.noNote": "কোনো নোট লেখা হয়নি",
+    "checkout.review.note": "এই ফ্রন্টএন্ড প্রদর্শনী থেকে কোনো অর্ডার পাঠানো বা সংরক্ষণ করা হয় না।",
+    "checkout.review.callout": "চালিয়ে যাওয়ার আগে ডেলিভারি এলাকা ও হিসাব করা সর্বমোট দেখে নিন।",
+    "checkout.review.cartChanged": "আপনার ব্যাগে পরিবর্তন হয়েছে। এগোনোর আগে পণ্য, পরিমাণ ও সাবটোটাল দেখে নিন।",
+    "checkout.review.cartChangedRead": "পরিবর্তিত অর্ডার পর্যালোচনা করা হয়েছে। এখন এই ফ্রন্টএন্ড প্রদর্শনী সম্পন্ন করতে পারেন।",
+    "checkout.summary.title": "আপনার পছন্দ",
+    "checkout.demoPrices": "নমুনা দাম",
+    "checkout.summary.quantity": "পরিমাণ",
+    "checkout.subtotal": "সাবটোটাল",
+    "checkout.delivery": "ডেলিভারি চার্জ",
+    "checkout.grandTotal": "সর্বমোট",
+    "checkout.toBeConfirmed": "নিশ্চিত করা বাকি",
+    "checkout.deliveryNote": "নির্বাচিত এলাকার ভিত্তিতে ডেলিভারি চার্জ হিসাব করা হয়।",
+    "checkout.demoNotice": "পণ্যের দাম নমুনা হিসেবে দেখানো হয়েছে। কোনো অর্ডার বা পেমেন্ট করা হয় না।",
+    "checkout.action.back": "সংগ্রহে ফিরে যান",
+    "checkout.action.review": "অর্ডার পর্যালোচনা",
+    "checkout.action.edit": "তথ্য সম্পাদনা",
+    "checkout.action.complete": "ডেমো চেকআউট সম্পন্ন করুন",
+    "checkout.action.reviewUpdated": "পরিবর্তিত অর্ডার পর্যালোচনা",
+    "checkout.continueShopping": "কেনাকাটা চালিয়ে যান",
+    "checkout.confirmation.eyebrow": "ফ্রন্টএন্ড প্রদর্শনী",
+    "checkout.confirmation.title": "চেকআউট প্রিভিউ সম্পন্ন",
+    "checkout.confirmation.lead": "বাস্তব অর্ডার ছাড়াই একটি যত্নে সাজানো শেষ দৃশ্য।",
+    "checkout.confirmation.message": "কোনো অর্ডার পাঠানো বা সংরক্ষণ করা হয়নি, কোনো পেমেন্ট নেওয়া হয়নি এবং কোনো অর্ডার নম্বর তৈরি করা হয়নি।",
+    "checkout.confirmation.notice": "এটি শুধু ফ্রন্টএন্ড প্রদর্শনী। পণ্যের দাম ও ডেলিভারি চার্জ নমুনা; কোনো অর্ডার করা হয়নি।",
+    "checkout.empty.eyebrow": "রীতির জন্য একটু জায়গা",
+    "checkout.empty.title": "আপনার ব্যাগ অপেক্ষায় আছে।",
+    "checkout.empty.message": "পর্যালোচনা করার মতো কোনো পণ্য নেই। ব্যাগে যোগ করা পণ্য এখানে দেখা যাবে।",
+    "checkout.empty.returnToBag": "ব্যাগে ফিরে যান",
     "cart.kicker": "আপনার পছন্দ",
     "cart.title": "আপনার ব্যাগ",
     "cart.emptyTitle": "সুন্দর কিছুর জন্য একটু জায়গা।",
@@ -462,6 +626,29 @@ let cartPersistenceWarningShown = false;
 let cartPersistenceWarningPending = false;
 let cartRestoreWarningPending = false;
 const homePageTitle = document.title;
+const checkoutView = document.querySelector("#checkoutView");
+const checkoutSummaryItems = document.querySelector("#checkoutSummaryItems");
+let checkoutRouteActive = false;
+let checkoutCurrentState = "details";
+let checkoutValidationAttempted = false;
+let checkoutCartRevision = 0;
+let checkoutReviewedCartRevision = 0;
+let checkoutReviewStale = false;
+let checkoutReviewAcknowledged = false;
+let checkoutConfirmationSnapshot = null;
+const DELIVERY_CHARGE_INSIDE_DHAKA = 60;
+const DELIVERY_CHARGE_OUTSIDE_DHAKA = 120;
+const CHECKOUT_DELIVERY_AREAS = Object.freeze({
+  insideDhaka: {
+    labelKey: "checkout.deliveryArea.insideDhaka",
+    charge: DELIVERY_CHARGE_INSIDE_DHAKA
+  },
+  outsideDhaka: {
+    labelKey: "checkout.deliveryArea.outsideDhaka",
+    charge: DELIVERY_CHARGE_OUTSIDE_DHAKA
+  }
+});
+const checkoutDeliveryArea = document.querySelector("#checkoutDeliveryArea");
 
 function formatPrice(amount) {
   const locale = language === "bn" ? "bn-BD" : "en-BD";
@@ -475,6 +662,346 @@ function getProductName(product) {
 function formatQuantity(quantity) {
   const locale = language === "bn" ? "bn-BD" : "en-BD";
   return new Intl.NumberFormat(locale).format(quantity);
+}
+
+function getCheckoutDeliveryArea() {
+  return Object.prototype.hasOwnProperty.call(CHECKOUT_DELIVERY_AREAS, checkoutDeliveryArea.value)
+    ? CHECKOUT_DELIVERY_AREAS[checkoutDeliveryArea.value]
+    : null;
+}
+
+function updateCheckoutDeliveryOptions() {
+  Object.entries(CHECKOUT_DELIVERY_AREAS).forEach(([value, area]) => {
+    const option = Array.from(checkoutDeliveryArea.options).find((item) => item.value === value);
+    if (!option) {
+      console.error(`Missing checkout delivery option "${value}".`);
+      return;
+    }
+    option.textContent = `${translations[language][area.labelKey]} — ${formatPrice(area.charge)}`;
+  });
+}
+
+const checkoutCharacterSegmenter = typeof Intl.Segmenter === "function"
+  ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+  : null;
+
+function countCheckoutCharacters(value) {
+  return checkoutCharacterSegmenter
+    ? Array.from(checkoutCharacterSegmenter.segment(value)).length
+    : Array.from(value).length;
+}
+
+const checkoutNamePattern = /^\p{L}[\p{L}\p{M}]*(?:[.'’-]\p{L}[\p{L}\p{M}]*)*\.?(?: +\p{L}[\p{L}\p{M}]*(?:[.'’-]\p{L}[\p{L}\p{M}]*)*\.?)*$/u;
+
+function normalizeBangladeshiMobile(value) {
+  const ascii = value.trim().replace(/[০-৯]/g, (digit) =>
+    String.fromCharCode(digit.charCodeAt(0) - 0x09e6 + 0x30)
+  );
+  if (!/^[0-9+\s-]+$/.test(ascii)) return "";
+  let local = ascii.replace(/[\s-]/g, "");
+  if (local.startsWith("+880")) local = `0${local.slice(4)}`;
+  return /^01[3-9]\d{8}$/.test(local) ? local : "";
+}
+
+function formatCheckoutMobile(local, original) {
+  if (/[০-৯]/.test(original)) {
+    return local.replace(/\d/g, (digit) =>
+      String.fromCharCode(0x09e6 + Number(digit))
+    );
+  }
+  return local;
+}
+
+const checkoutRequiredFields = [
+  {
+    input: document.querySelector("#checkoutFullName"),
+    container: document.querySelector("#checkoutFullNameField"),
+    error: document.querySelector("#checkoutFullNameError"),
+    errorText: document.querySelector("#checkoutFullNameErrorText"),
+    validate() {
+      const value = this.input.value.trim();
+      if (!value) return "checkout.name.required";
+      const length = countCheckoutCharacters(value);
+      if (length < 2 || length > 80) return "checkout.name.length";
+      return checkoutNamePattern.test(value) ? "" : "checkout.name.format";
+    }
+  },
+  {
+    input: document.querySelector("#checkoutPhone"),
+    container: document.querySelector("#checkoutPhoneField"),
+    error: document.querySelector("#checkoutPhoneError"),
+    errorText: document.querySelector("#checkoutPhoneErrorText"),
+    validate() {
+      const value = this.input.value.trim();
+      if (!value) return "checkout.phone.required";
+      return normalizeBangladeshiMobile(value) ? "" : "checkout.phone.invalid";
+    }
+  },
+  {
+    input: document.querySelector("#checkoutAddress"),
+    container: document.querySelector("#checkoutAddress").closest(".checkout-field"),
+    error: document.querySelector("#checkoutAddressError"),
+    errorText: document.querySelector("#checkoutAddressErrorText"),
+    validate() {
+      const value = this.input.value.trim();
+      if (!value) return "checkout.address.required";
+      const length = countCheckoutCharacters(value);
+      if (length < 10) return "checkout.address.tooShort";
+      if (length > 500) return "checkout.address.tooLong";
+      return "";
+    }
+  },
+  {
+    input: checkoutDeliveryArea,
+    container: document.querySelector("#checkoutDeliveryAreaField"),
+    error: document.querySelector("#checkoutDeliveryAreaError"),
+    errorText: document.querySelector("#checkoutDeliveryAreaErrorText"),
+    validate() {
+      return Object.prototype.hasOwnProperty.call(CHECKOUT_DELIVERY_AREAS, this.input.value)
+        ? ""
+        : "checkout.deliveryArea.required";
+    }
+  }
+];
+const checkoutOptionalFields = [{
+  input: document.querySelector("#checkoutOrderNote"),
+  container: document.querySelector("#checkoutOrderNote").closest(".checkout-field"),
+  error: document.querySelector("#checkoutOrderNoteError"),
+  errorText: document.querySelector("#checkoutOrderNoteErrorText"),
+  validate() {
+    return countCheckoutCharacters(this.input.value) > 500 ? "checkout.note.tooLong" : "";
+  }
+}];
+const checkoutFields = [...checkoutRequiredFields, ...checkoutOptionalFields];
+const checkoutDeliveryField = checkoutRequiredFields.find((field) => field.input === checkoutDeliveryArea);
+
+function setCheckoutFieldError(field, errorKey) {
+  field.errorKey = errorKey;
+  const invalid = Boolean(errorKey);
+  field.container.classList.toggle("checkout-field--error", invalid);
+  field.error.hidden = !invalid;
+  field.input.setAttribute("aria-invalid", String(invalid));
+  if (invalid) field.errorText.textContent = translations[language][errorKey];
+  return !invalid;
+}
+
+function validateCheckoutFields() {
+  let firstInvalid = null;
+  checkoutFields.forEach((field) => {
+    if (!setCheckoutFieldError(field, field.validate()) && !firstInvalid) firstInvalid = field;
+  });
+  if (firstInvalid) {
+    document.querySelector("#checkoutStateAnnouncement").textContent = translations[language]["checkout.validation.summary"];
+    firstInvalid.input.focus();
+    return false;
+  }
+
+  const phoneField = checkoutRequiredFields.find((field) => field.input.id === "checkoutPhone");
+  const originalPhone = phoneField.input.value;
+  phoneField.input.value = formatCheckoutMobile(normalizeBangladeshiMobile(originalPhone), originalPhone);
+  checkoutRequiredFields.forEach((field) => {
+    field.input.value = field.input.value.trim();
+  });
+  checkoutOptionalFields.forEach((field) => {
+    field.input.value = field.input.value.trim();
+  });
+  document.querySelector("#checkoutStateAnnouncement").textContent = "";
+  return true;
+}
+
+function setCheckoutReviewValue(outputId, inputId, emptyKey) {
+  const input = document.querySelector(inputId);
+  const output = document.querySelector(outputId);
+  const value = input.value.trim();
+  output.textContent = value || translations[language][emptyKey];
+  output.classList.toggle("checkout-review-empty-value", !value);
+}
+
+function renderCheckoutSummary() {
+  if (!checkoutSummaryItems) return;
+  const fragment = document.createDocumentFragment();
+  let subtotal = 0;
+
+  cart.forEach((quantity, key) => {
+    const product = products[key];
+    if (!product) {
+      console.error(`Cannot display unknown cart product "${key}" in checkout.`);
+      return;
+    }
+    const productName = translations[language][product.nameKey];
+    const itemSubtotal = product.price * quantity;
+    subtotal += itemSubtotal;
+
+    const article = document.createElement("article");
+    const imageFrame = document.createElement("div");
+    const image = document.createElement("img");
+    const info = document.createElement("div");
+    const heading = document.createElement("h3");
+    const meta = document.createElement("div");
+    const size = document.createElement("span");
+    const dot = document.createElement("span");
+    const quantityText = document.createElement("span");
+    const price = document.createElement("strong");
+
+    article.className = "checkout-summary-item";
+    imageFrame.className = "checkout-summary-item__image";
+    image.src = product.image;
+    image.alt = translations[language][product.imageAltKey];
+    image.width = product.imageWidth;
+    image.height = product.imageHeight;
+    image.loading = "lazy";
+    imageFrame.append(image);
+    info.className = "checkout-summary-item__info";
+    heading.textContent = productName;
+    meta.className = "checkout-summary-item__meta";
+    size.textContent = product.detail;
+    dot.className = "checkout-summary-item__dot";
+    dot.setAttribute("aria-hidden", "true");
+    quantityText.textContent = `${translations[language]["checkout.summary.quantity"]} ${formatQuantity(quantity)}`;
+    meta.append(size, dot, quantityText);
+    info.append(heading, meta);
+    price.className = "checkout-summary-item__price";
+    price.textContent = formatPrice(itemSubtotal);
+    article.append(imageFrame, info, price);
+    fragment.append(article);
+  });
+
+  checkoutSummaryItems.replaceChildren(fragment);
+  document.querySelector("#checkoutSubtotal").textContent = formatPrice(subtotal);
+  const selectedArea = getCheckoutDeliveryArea();
+  document.querySelector("#checkoutDeliveryAreaSummary").textContent = selectedArea
+    ? translations[language][selectedArea.labelKey]
+    : translations[language]["checkout.deliveryArea.choose"];
+  const deliveryLabel = document.querySelector("#checkoutDeliveryCharge");
+  const totalLabel = document.querySelector("#checkoutGrandTotal");
+  deliveryLabel.textContent = !selectedArea
+    ? translations[language]["checkout.toBeConfirmed"]
+    : formatPrice(selectedArea.charge);
+  totalLabel.textContent = !selectedArea
+    ? translations[language]["checkout.toBeConfirmed"]
+    : formatPrice(subtotal + selectedArea.charge);
+}
+
+function renderCheckoutConfirmation() {
+  if (!checkoutConfirmationSnapshot) {
+    console.error("Cannot render checkout confirmation without a snapshot.");
+    return;
+  }
+  const selectedArea = CHECKOUT_DELIVERY_AREAS[checkoutConfirmationSnapshot.deliveryAreaId];
+  if (!selectedArea) {
+    console.error("Cannot render checkout confirmation with an unknown delivery area.");
+    return;
+  }
+
+  document.querySelector("#checkoutConfirmationDeliveryArea").textContent =
+    translations[language][selectedArea.labelKey];
+  document.querySelector("#checkoutConfirmationDeliveryCharge").textContent =
+    formatPrice(checkoutConfirmationSnapshot.deliveryCharge);
+  document.querySelector("#checkoutConfirmationGrandTotal").textContent =
+    formatPrice(checkoutConfirmationSnapshot.grandTotal);
+}
+
+function renderCheckoutReviewDelivery() {
+  const selectedArea = getCheckoutDeliveryArea();
+  document.querySelector("#checkoutReviewDeliveryArea").textContent = selectedArea
+    ? translations[language][selectedArea.labelKey]
+    : translations[language]["checkout.deliveryArea.choose"];
+  document.querySelector("#checkoutReviewDeliveryCharge").textContent =
+    document.querySelector("#checkoutDeliveryCharge").textContent;
+  document.querySelector("#checkoutReviewGrandTotal").textContent =
+    document.querySelector("#checkoutGrandTotal").textContent;
+}
+
+function updateCheckoutReviewNotice() {
+  const notice = document.querySelector("#checkoutReviewCallout");
+  const actionLabel = document.querySelector("#checkoutConfirmLabel");
+  if (checkoutReviewStale) {
+    notice.textContent = translations[language]["checkout.review.cartChanged"];
+    actionLabel.textContent = translations[language]["checkout.action.reviewUpdated"];
+  } else if (checkoutReviewAcknowledged) {
+    notice.textContent = translations[language]["checkout.review.cartChangedRead"];
+    actionLabel.textContent = translations[language]["checkout.action.complete"];
+  } else {
+    notice.textContent = translations[language]["checkout.review.callout"];
+    actionLabel.textContent = translations[language]["checkout.action.complete"];
+  }
+}
+
+function renderCheckoutState(state, moveFocus = true) {
+  if ((state === "details" || state === "review") && cart.size === 0) state = "empty";
+  checkoutCurrentState = state;
+  const isFormState = state === "details" || state === "review";
+  document.querySelector("#checkoutLayout").hidden = !isFormState;
+  document.querySelector("#checkoutDetailsPanel").hidden = state !== "details";
+  document.querySelector("#checkoutReviewPanel").hidden = state !== "review";
+  document.querySelector("#checkoutConfirmation").hidden = state !== "confirmation";
+  document.querySelector("#checkoutEmptyState").hidden = state !== "empty";
+  document.querySelector("#checkoutProgress").hidden = state === "empty";
+  document.querySelector("#checkoutHeading").hidden = state === "confirmation" || state === "empty";
+  document.querySelector("#checkoutBackAction").hidden = state !== "details";
+  document.querySelector("#checkoutReviewAction").hidden = state !== "details";
+  document.querySelector("#checkoutEditAction").hidden = state !== "review";
+  document.querySelector("#checkoutConfirmAction").hidden = state !== "review";
+
+  const stateHeadingKeys = {
+    details: ["checkout.heading.details", "checkout.description.details"],
+    review: ["checkout.heading.review", "checkout.description.review"],
+    confirmation: ["checkout.heading.confirmation", "checkout.description.confirmation"],
+    empty: ["checkout.heading.empty", "checkout.description.empty"]
+  };
+  const [headingKey, descriptionKey] = stateHeadingKeys[state];
+  document.querySelector("#checkoutTitle").textContent = translations[language][headingKey];
+  document.querySelector("#checkoutDescription").textContent = translations[language][descriptionKey];
+  document.title = translations[language]["checkout.documentTitle"];
+
+  const currentStep = state === "details" ? 1 : state === "review" ? 2 : 3;
+  document.querySelectorAll("[data-checkout-progress-step]").forEach((step) => {
+    const stepNumber = Number(step.dataset.checkoutProgressStep);
+    step.classList.toggle("checkout-progress__step--current", state !== "empty" && stepNumber === currentStep);
+    step.classList.toggle("checkout-progress__step--complete", state !== "empty" && stepNumber < currentStep);
+    if (state !== "empty" && stepNumber === currentStep) step.setAttribute("aria-current", "step");
+    else step.removeAttribute("aria-current");
+  });
+
+  if (state === "review") {
+    checkoutReviewedCartRevision = checkoutCartRevision;
+    checkoutReviewStale = false;
+    checkoutReviewAcknowledged = false;
+    setCheckoutReviewValue("#checkoutReviewName", "#checkoutFullName", "checkout.notEntered");
+    setCheckoutReviewValue("#checkoutReviewPhone", "#checkoutPhone", "checkout.notEntered");
+    setCheckoutReviewValue("#checkoutReviewAddress", "#checkoutAddress", "checkout.notEntered");
+    setCheckoutReviewValue("#checkoutReviewNote", "#checkoutOrderNote", "checkout.noNote");
+    renderCheckoutReviewDelivery();
+    updateCheckoutReviewNotice();
+  }
+
+  if (state === "confirmation") renderCheckoutConfirmation();
+
+  document.querySelector("#checkoutStateAnnouncement").textContent = translations[language][headingKey];
+  if (moveFocus) {
+    const focusTarget = state === "confirmation"
+      ? document.querySelector("#checkoutConfirmationTitle")
+      : state === "empty"
+        ? document.querySelector("#checkoutEmptyTitle")
+        : document.querySelector("#checkoutTitle");
+    focusTarget.focus();
+  }
+}
+
+function syncCheckoutAfterCartChange() {
+  renderCheckoutSummary();
+  if (!checkoutRouteActive) return;
+  if (cart.size === 0 && (checkoutCurrentState === "details" || checkoutCurrentState === "review")) {
+    renderCheckoutState("empty");
+    return;
+  }
+  if (checkoutCurrentState === "review" && checkoutCartRevision !== checkoutReviewedCartRevision) {
+    renderCheckoutReviewDelivery();
+    checkoutReviewStale = true;
+    checkoutReviewAcknowledged = false;
+    updateCheckoutReviewNotice();
+    document.querySelector("#checkoutStateAnnouncement").textContent = translations[language]["checkout.review.cartChanged"];
+  }
 }
 
 function restoreCart() {
@@ -712,10 +1239,10 @@ function renderProductDetails(key) {
   renderRelatedProducts(key);
 }
 
-function setMobileNavigationActive(isProductRoute) {
+function setMobileNavigationActive(isProductRoute, isCheckoutRoute) {
   const isShopRoute = isProductRoute || window.location.hash === "#shop";
   document.querySelectorAll(".mobile-dock a").forEach((link) => {
-    const isCurrent = isShopRoute ? link.hash === "#shop" : link.hash === "#top";
+    const isCurrent = !isCheckoutRoute && (isShopRoute ? link.hash === "#shop" : link.hash === "#top");
     link.classList.toggle("is-current", isCurrent);
     if (isCurrent) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");
@@ -725,13 +1252,53 @@ function setMobileNavigationActive(isProductRoute) {
 function handlePageRoute() {
   const productRoutePrefix = "#product/";
   const isProductRoute = window.location.hash.startsWith(productRoutePrefix);
+  const isCheckoutRoute = window.location.hash === "#checkout";
   const homeView = document.querySelector("#homeView");
   const productView = document.querySelector("#productView");
+
+  if (isCheckoutRoute) {
+    openSearchAfterHomeNavigation = false;
+    searchOpenerAfterHomeNavigation = null;
+    if (!searchPanel.hidden) closeSearch();
+    if (cartDrawer.classList.contains("is-open")) closeCart();
+
+    const enteringCheckout = !checkoutRouteActive;
+    activeProductKey = null;
+    homeView.hidden = true;
+    productView.hidden = true;
+    checkoutView.hidden = false;
+    checkoutRouteActive = true;
+    setMobileNavigationActive(false, true);
+
+    if (enteringCheckout && checkoutCurrentState === "confirmation") {
+      checkoutCurrentState = cart.size > 0 ? "details" : "empty";
+    } else if (cart.size === 0) {
+      checkoutCurrentState = "empty";
+    } else if (checkoutCurrentState === "empty") {
+      checkoutCurrentState = "details";
+    }
+
+    renderCheckoutSummary();
+    renderCheckoutState(checkoutCurrentState, false);
+    window.scrollTo(0, 0);
+    window.requestAnimationFrame(() => {
+      const focusTarget = checkoutCurrentState === "empty"
+        ? document.querySelector("#checkoutEmptyTitle")
+        : checkoutCurrentState === "confirmation"
+          ? document.querySelector("#checkoutConfirmationTitle")
+          : document.querySelector("#checkoutTitle");
+      focusTarget.focus({ preventScroll: true });
+    });
+    return;
+  }
 
   if (isProductRoute) {
     openSearchAfterHomeNavigation = false;
     searchOpenerAfterHomeNavigation = null;
-    setMobileNavigationActive(true);
+    checkoutRouteActive = false;
+    checkoutView.hidden = true;
+    if (cartDrawer.classList.contains("is-open")) closeCart();
+    setMobileNavigationActive(true, false);
     if (!searchPanel.hidden) closeSearch();
     const key = window.location.hash.slice(productRoutePrefix.length);
     const productExists = Object.prototype.hasOwnProperty.call(products, key);
@@ -760,13 +1327,17 @@ function handlePageRoute() {
   }
 
   const wasProductRoute = activeProductKey !== null || !productView.hidden;
+  const wasCheckoutRoute = checkoutRouteActive;
   activeProductKey = null;
-  setMobileNavigationActive(false);
+  checkoutRouteActive = false;
+  checkoutView.hidden = true;
+  if (cartDrawer.classList.contains("is-open")) closeCart();
+  setMobileNavigationActive(false, false);
   productView.hidden = true;
   homeView.hidden = false;
   document.title = homePageTitle;
 
-  if (wasProductRoute && window.location.hash.length > 1) {
+  if ((wasProductRoute || wasCheckoutRoute) && window.location.hash.length > 1) {
     const targetId = window.location.hash.slice(1);
     window.requestAnimationFrame(() => {
       const target = document.getElementById(targetId);
@@ -804,6 +1375,7 @@ function applyLanguage(nextLanguage) {
     const text = translations[language][element.dataset.i18nPlaceholder];
     if (text) element.placeholder = text;
   });
+  updateCheckoutDeliveryOptions();
   languageSwitch.setAttribute("aria-label", language === "en" ? "Switch language to Bangla" : "Switch language to English");
   document.querySelectorAll(".price-value, .product-price").forEach((element) => {
     const price = Number(element.dataset.price);
@@ -813,6 +1385,10 @@ function applyLanguage(nextLanguage) {
   updateProductResults(languageInitialized);
   languageInitialized = true;
   if (activeProductKey) renderProductDetails(activeProductKey);
+  checkoutFields.forEach((field) => {
+    if (field.errorKey) field.errorText.textContent = translations[language][field.errorKey];
+  });
+  if (checkoutRouteActive) renderCheckoutState(checkoutCurrentState, false);
 }
 
 function showToast(message) {
@@ -882,6 +1458,7 @@ function renderCart() {
       <span class="cart-item__price">${formatPrice(product.price * count)}</span>
     </article>`;
   }).join("");
+  syncCheckoutAfterCartChange();
 }
 
 function addToCart(key, quantity) {
@@ -897,16 +1474,18 @@ function addToCart(key, quantity) {
   }
 
   cart.set(key, (cart.get(key) || 0) + quantity);
+  checkoutCartRevision += 1;
   const persisted = persistCart();
   renderCart();
   if (!persisted) {
     showCartPersistenceWarning();
-    return;
+    return true;
   }
   const productName = getProductName(products[key]);
   const locale = language === "bn" ? "bn-BD" : "en-BD";
   const quantityPrefix = quantity > 1 ? `${new Intl.NumberFormat(locale).format(quantity)} × ` : "";
   showToast(`${quantityPrefix}${productName} · ${translations[language]["toast.added"]}`);
+  return true;
 }
 
 function updateProductQuantity(nextQuantity) {
@@ -937,7 +1516,10 @@ document.querySelector("#pdpAddToCart").addEventListener("click", () => {
   }
   addToCart(activeProductKey, productQuantity);
 });
-document.querySelector("#pdpBuyNow").addEventListener("click", () => showToast(translations[language]["toast.checkout"]));
+document.querySelector("#pdpBuyNow").addEventListener("click", () => {
+  if (!activeProductKey || !addToCart(activeProductKey, productQuantity)) return;
+  window.location.hash = "#checkout";
+});
 
 document.querySelector("#cartToggle").addEventListener("click", openCart);
 document.querySelector("#cartClose").addEventListener("click", closeCart);
@@ -945,7 +1527,92 @@ document.querySelector("#accountPreview").addEventListener("click", () => showTo
 document.querySelector("#accountMobile").addEventListener("click", () => showToast(translations[language]["toast.account"]));
 drawerBackdrop.addEventListener("click", closeCart);
 document.querySelector("#continueShopping").addEventListener("click", closeCart);
-document.querySelector("#checkoutPreview").addEventListener("click", () => showToast(translations[language]["toast.checkout"]));
+document.querySelector("#checkoutPreview").addEventListener("click", () => {
+  closeCart();
+  window.location.hash = "#checkout";
+  if (window.location.hash === "#checkout") handlePageRoute();
+});
+document.querySelector("#checkoutBreadcrumbBag").addEventListener("click", openCart);
+document.querySelector("#checkoutEmptyBag").addEventListener("click", openCart);
+
+document.querySelector("#checkoutForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  checkoutValidationAttempted = true;
+  if (validateCheckoutFields()) renderCheckoutState("review");
+});
+checkoutFields.forEach((field) => {
+  field.input.addEventListener("input", () => {
+    if (!checkoutValidationAttempted) return;
+    setCheckoutFieldError(field, field.validate());
+    if (checkoutFields.every((validatedField) => !validatedField.errorKey)) {
+      document.querySelector("#checkoutStateAnnouncement").textContent = "";
+    }
+  });
+});
+checkoutDeliveryArea.addEventListener("change", () => {
+  renderCheckoutSummary();
+  if (!checkoutValidationAttempted) return;
+  if (!checkoutDeliveryField) {
+    console.error("Checkout delivery-area validation field is missing.");
+    return;
+  }
+  setCheckoutFieldError(checkoutDeliveryField, checkoutDeliveryField.validate());
+  if (checkoutFields.every((field) => !field.errorKey)) {
+    document.querySelector("#checkoutStateAnnouncement").textContent = "";
+  }
+});
+document.querySelector("#checkoutEditAction").addEventListener("click", () => renderCheckoutState("details"));
+document.querySelector("#checkoutConfirmAction").addEventListener("click", () => {
+  if (checkoutCurrentState !== "review") return;
+  if (cart.size === 0) {
+    renderCheckoutState("empty");
+    return;
+  }
+  if (!validateCheckoutFields()) {
+    renderCheckoutState("details", false);
+    return;
+  }
+  if (checkoutReviewStale || checkoutCartRevision !== checkoutReviewedCartRevision) {
+    checkoutReviewStale = false;
+    checkoutReviewAcknowledged = true;
+    checkoutReviewedCartRevision = checkoutCartRevision;
+    updateCheckoutReviewNotice();
+    document.querySelector("#checkoutStateAnnouncement").textContent = translations[language]["checkout.review.cartChangedRead"];
+    return;
+  }
+
+  const selectedArea = getCheckoutDeliveryArea();
+  if (!selectedArea) {
+    renderCheckoutState("details", false);
+    checkoutDeliveryArea.focus();
+    return;
+  }
+  const subtotal = Array.from(cart).reduce(
+    (total, [productId, quantity]) => total + products[productId].price * quantity,
+    0
+  );
+  checkoutConfirmationSnapshot = {
+    customer: {
+      name: document.querySelector("#checkoutFullName").value,
+      phone: document.querySelector("#checkoutPhone").value,
+      address: document.querySelector("#checkoutAddress").value,
+      note: document.querySelector("#checkoutOrderNote").value
+    },
+    items: Array.from(cart, ([productId, quantity]) => ({ productId, quantity })),
+    deliveryAreaId: checkoutDeliveryArea.value,
+    deliveryCharge: selectedArea.charge,
+    grandTotal: subtotal + selectedArea.charge,
+    cartRevision: checkoutCartRevision
+  };
+  cart.clear();
+  checkoutCartRevision += 1;
+  const persisted = persistCart();
+  checkoutReviewStale = false;
+  checkoutReviewAcknowledged = false;
+  renderCheckoutState("confirmation");
+  renderCart();
+  if (!persisted) showCartPersistenceWarning();
+});
 
 cartItems.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-quantity]");
@@ -955,6 +1622,7 @@ cartItems.addEventListener("click", (event) => {
   const change = button.dataset.change;
   if (nextCount <= 0) cart.delete(key);
   else cart.set(key, nextCount);
+  checkoutCartRevision += 1;
   const persisted = persistCart();
   renderCart();
   if (!persisted) showCartPersistenceWarning();

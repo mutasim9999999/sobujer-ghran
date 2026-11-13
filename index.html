@@ -491,6 +491,214 @@
           <a class="button button--primary" href="#shop" data-i18n="pdp.backToShop">Back to the collection</a>
         </div>
       </section>
+
+      <section class="checkout-view" id="checkoutView" hidden aria-labelledby="checkoutTitle">
+        <div class="section-wrap">
+          <header class="checkout-heading" id="checkoutHeading">
+            <nav class="checkout-breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="#top" data-i18n="checkout.home">Home</a></li>
+                <li class="checkout-breadcrumb__separator" aria-hidden="true">/</li>
+                <li><button class="checkout-breadcrumb__bag" id="checkoutBreadcrumbBag" type="button" data-i18n="bag">Bag</button></li>
+                <li class="checkout-breadcrumb__separator" aria-hidden="true">/</li>
+                <li aria-current="page" data-i18n="checkout.label">Checkout</li>
+              </ol>
+            </nav>
+            <p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="checkout.eyebrow">A THOUGHTFUL FINAL CHECK</span></p>
+            <h1 id="checkoutTitle" tabindex="-1">A thoughtful final check.</h1>
+            <p class="checkout-heading__description" id="checkoutDescription">A few details for this visual checkout journey.</p>
+          </header>
+
+          <ol class="checkout-progress" id="checkoutProgress" aria-label="Checkout progress">
+            <li class="checkout-progress__step checkout-progress__step--current" data-checkout-progress-step="1" aria-current="step">
+              <span class="checkout-progress__number" aria-hidden="true">1</span><span class="checkout-progress__label" data-i18n="checkout.progress.details">Your details</span>
+            </li>
+            <li class="checkout-progress__step" data-checkout-progress-step="2">
+              <span class="checkout-progress__number" aria-hidden="true">2</span><span class="checkout-progress__label" data-i18n="checkout.progress.review">Review</span>
+            </li>
+            <li class="checkout-progress__step" data-checkout-progress-step="3">
+              <span class="checkout-progress__number" aria-hidden="true">3</span><span class="checkout-progress__label" data-i18n="checkout.progress.done">Done</span>
+            </li>
+          </ol>
+
+          <div class="checkout-layout" id="checkoutLayout">
+            <div class="checkout-primary">
+              <section class="checkout-panel" id="checkoutDetailsPanel" aria-labelledby="checkoutDetailsTitle">
+                <div class="checkout-panel__heading">
+                  <div>
+                    <h2 id="checkoutDetailsTitle" data-i18n="checkout.details.title">Delivery details</h2>
+                    <p data-i18n="checkout.details.intro">Please enter the information you'd like to review.</p>
+                  </div>
+                  <p class="checkout-required-note"><span class="checkout-required-mark" aria-hidden="true">*</span> <span data-i18n="checkout.required">Required</span></p>
+                </div>
+
+                <form class="checkout-form" id="checkoutForm" novalidate>
+                  <div class="checkout-form-grid">
+                    <div class="checkout-field" id="checkoutFullNameField">
+                      <label for="checkoutFullName"><span data-i18n="checkout.name.label">Full name</span> <span class="checkout-required-mark" aria-hidden="true">*</span></label>
+                      <input id="checkoutFullName" name="name" type="text" autocomplete="name" placeholder="Your full name" data-i18n-placeholder="checkout.name.placeholder" aria-required="true" aria-invalid="false" aria-describedby="checkoutFullNameError">
+                      <p class="checkout-field__error" id="checkoutFullNameError" role="alert" hidden>
+                        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+                        <span id="checkoutFullNameErrorText"></span>
+                      </p>
+                    </div>
+                    <div class="checkout-field" id="checkoutPhoneField">
+                      <label for="checkoutPhone"><span data-i18n="checkout.phone.label">Phone number</span> <span class="checkout-required-mark" aria-hidden="true">*</span></label>
+                      <input id="checkoutPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Phone number" data-i18n-placeholder="checkout.phone.placeholder" aria-required="true" aria-invalid="false" aria-describedby="checkoutPhoneError checkoutPhoneHint">
+                      <p class="checkout-field__error" id="checkoutPhoneError" role="alert" hidden>
+                        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+                        <span id="checkoutPhoneErrorText"></span>
+                      </p>
+                      <span class="checkout-field__hint" id="checkoutPhoneHint" data-i18n="checkout.phone.hint">Use the number you'd like the shop to contact.</span>
+                    </div>
+                    <div class="checkout-field checkout-field--wide">
+                      <label for="checkoutAddress"><span data-i18n="checkout.address.label">Full delivery address</span> <span class="checkout-required-mark" aria-hidden="true">*</span></label>
+                      <textarea id="checkoutAddress" name="address" autocomplete="street-address" placeholder="Full delivery address" data-i18n-placeholder="checkout.address.placeholder" aria-required="true" aria-invalid="false" aria-describedby="checkoutAddressError checkoutAddressHint"></textarea>
+                      <p class="checkout-field__error" id="checkoutAddressError" role="alert" hidden>
+                        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+                        <span id="checkoutAddressErrorText"></span>
+                      </p>
+                      <span class="checkout-field__hint" id="checkoutAddressHint" data-i18n="checkout.address.hint">Include the details you want to see in the order review.</span>
+                    </div>
+                    <div class="checkout-field checkout-field--wide" id="checkoutDeliveryAreaField">
+                      <label for="checkoutDeliveryArea"><span data-i18n="checkout.deliveryArea.label">Delivery area</span> <span class="checkout-required-mark" aria-hidden="true">*</span></label>
+                      <select id="checkoutDeliveryArea" name="deliveryArea" aria-required="true" aria-invalid="false" aria-describedby="checkoutDeliveryAreaError checkoutDeliveryAreaHint">
+                        <option value="" selected disabled data-i18n="checkout.deliveryArea.choose">Choose your delivery area</option>
+                        <option value="insideDhaka" data-i18n="checkout.deliveryArea.insideDhaka">Inside Dhaka</option>
+                        <option value="outsideDhaka" data-i18n="checkout.deliveryArea.outsideDhaka">Outside Dhaka</option>
+                      </select>
+                      <p class="checkout-field__error" id="checkoutDeliveryAreaError" role="alert" hidden>
+                        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+                        <span id="checkoutDeliveryAreaErrorText"></span>
+                      </p>
+                      <span class="checkout-field__hint" id="checkoutDeliveryAreaHint" data-i18n="checkout.deliveryArea.hint">Delivery charges depend on the area you select.</span>
+                    </div>
+                    <div class="checkout-field checkout-field--wide">
+                      <label for="checkoutOrderNote"><span data-i18n="checkout.note.label">Order note</span> <span class="checkout-field__optional" data-i18n="checkout.optional">(optional)</span></label>
+                      <textarea id="checkoutOrderNote" name="note" placeholder="Optional note" data-i18n-placeholder="checkout.note.placeholder" aria-invalid="false" aria-describedby="checkoutOrderNoteError checkoutOrderNoteHint"></textarea>
+                      <p class="checkout-field__error" id="checkoutOrderNoteError" role="alert" hidden>
+                        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+                        <span id="checkoutOrderNoteErrorText"></span>
+                      </p>
+                      <span class="checkout-field__hint" id="checkoutOrderNoteHint" data-i18n="checkout.note.hint">Optional. Maximum 500 characters.</span>
+                    </div>
+                  </div>
+                  <p class="checkout-privacy-note">
+                    <svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg>
+                    <span data-i18n="checkout.privacy">Frontend demonstration only. Details entered here are not sent or stored.</span>
+                  </p>
+                  <p class="checkout-validation-note" data-i18n="checkout.validationNote">Client-side checks are for usability; a future backend must enforce these rules independently.</p>
+                </form>
+              </section>
+
+              <section class="checkout-review-card" id="checkoutReviewPanel" aria-labelledby="checkoutReviewTitle" hidden>
+                <div class="checkout-review-card__head">
+                  <div>
+                    <h2 id="checkoutReviewTitle" data-i18n="checkout.review.title">Your details</h2>
+                    <p data-i18n="checkout.review.intro">Check the information shown in this demonstration.</p>
+                  </div>
+                  <span class="checkout-demo-tag" data-i18n="checkout.previewOnly">PREVIEW ONLY</span>
+                </div>
+                <ul class="checkout-review-list">
+                  <li><strong data-i18n="checkout.name.label">Full name</strong><span id="checkoutReviewName"></span></li>
+                  <li><strong data-i18n="checkout.phone.label">Phone number</strong><span id="checkoutReviewPhone"></span></li>
+                  <li><strong data-i18n="checkout.address.label">Full delivery address</strong><span id="checkoutReviewAddress"></span></li>
+                  <li><strong data-i18n="checkout.deliveryArea.label">Delivery area</strong><span id="checkoutReviewDeliveryArea"></span></li>
+                  <li><strong data-i18n="checkout.delivery">Delivery charge</strong><span id="checkoutReviewDeliveryCharge"></span></li>
+                  <li><strong data-i18n="checkout.note.label">Order note</strong><span id="checkoutReviewNote"></span></li>
+                  <li><strong data-i18n="checkout.grandTotal">Grand total</strong><span id="checkoutReviewGrandTotal"></span></li>
+                </ul>
+                <p class="checkout-review-note" data-i18n="checkout.review.note">No order is sent or saved from this frontend demonstration.</p>
+                <div class="checkout-review-callout">
+                  <svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg>
+                  <span id="checkoutReviewCallout">Delivery charge and grand total remain to be confirmed.</span>
+                </div>
+              </section>
+            </div>
+
+            <aside class="checkout-summary" aria-labelledby="checkoutSummaryTitle">
+              <div class="checkout-summary-card">
+                <div class="checkout-summary-card__head">
+                  <h2 id="checkoutSummaryTitle" data-i18n="checkout.summary.title">Your selection</h2>
+                  <span class="checkout-demo-tag" data-i18n="checkout.demoPrices">DEMO PRICES</span>
+                </div>
+                <div class="checkout-summary-items" id="checkoutSummaryItems"></div>
+                <div class="checkout-price-breakdown">
+                  <div class="checkout-price-row">
+                    <span data-i18n="checkout.subtotal">Subtotal</span>
+                    <strong id="checkoutSubtotal">৳0</strong>
+                  </div>
+                  <div class="checkout-price-row checkout-price-row--delivery-area">
+                    <span data-i18n="checkout.deliveryArea.label">Delivery area</span>
+                    <strong id="checkoutDeliveryAreaSummary" data-i18n="checkout.deliveryArea.choose">Choose your delivery area</strong>
+                  </div>
+                  <div class="checkout-price-row checkout-price-row--delivery">
+                    <span data-i18n="checkout.delivery">Delivery charge</span>
+                    <strong id="checkoutDeliveryCharge" data-i18n="checkout.toBeConfirmed">To be confirmed</strong>
+                  </div>
+                  <div class="checkout-price-row checkout-price-row--total">
+                    <span data-i18n="checkout.grandTotal">Grand total</span>
+                    <strong id="checkoutGrandTotal" data-i18n="checkout.toBeConfirmed">To be confirmed</strong>
+                  </div>
+                </div>
+                <p class="checkout-summary-footnote" data-i18n="checkout.deliveryNote">Delivery charge is calculated from your selected area.</p>
+                <div class="checkout-summary-demo-note">
+                  <svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg>
+                  <span data-i18n="checkout.demoNotice">Sample product prices only. No order or payment is created.</span>
+                </div>
+              </div>
+            </aside>
+
+            <div class="checkout-actions" id="checkoutActions">
+              <a class="text-link" id="checkoutBackAction" href="#shop" data-i18n="checkout.action.back">Back to the collection</a>
+              <button class="button button--primary" id="checkoutReviewAction" type="submit" form="checkoutForm" data-i18n="checkout.action.review">Review order</button>
+              <button class="button button--secondary" id="checkoutEditAction" type="button" data-i18n="checkout.action.edit" hidden>Edit details</button>
+              <button class="button button--primary" id="checkoutConfirmAction" type="button" hidden>
+                <span id="checkoutConfirmLabel" data-i18n="checkout.action.complete">Complete demo checkout</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </button>
+            </div>
+          </div>
+
+          <section class="checkout-confirmation" id="checkoutConfirmation" aria-labelledby="checkoutConfirmationTitle" role="status" hidden>
+            <div class="checkout-confirmation__mark" aria-hidden="true">
+              <svg class="icon"><use href="#i-spark"></use></svg>
+            </div>
+            <p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="checkout.confirmation.eyebrow">A FRONTEND DEMONSTRATION</span></p>
+            <h2 id="checkoutConfirmationTitle" tabindex="-1" data-i18n="checkout.confirmation.title">Checkout preview complete</h2>
+            <p class="checkout-confirmation__lead" data-i18n="checkout.confirmation.lead">A considered final screen, with no real order behind it.</p>
+            <p class="checkout-confirmation__message" data-i18n="checkout.confirmation.message">No order was submitted or saved, no payment was taken, and no order number was created.</p>
+            <dl class="checkout-confirmation__summary">
+              <div><dt data-i18n="checkout.deliveryArea.label">Delivery area</dt><dd id="checkoutConfirmationDeliveryArea"></dd></div>
+              <div><dt data-i18n="checkout.delivery">Delivery charge</dt><dd id="checkoutConfirmationDeliveryCharge"></dd></div>
+              <div><dt data-i18n="checkout.grandTotal">Grand total</dt><dd id="checkoutConfirmationGrandTotal"></dd></div>
+            </dl>
+            <p class="checkout-confirmation__notice" data-i18n="checkout.confirmation.notice">This is only a frontend demonstration. Product prices are samples; delivery charge and grand total were not confirmed.</p>
+            <a class="button button--primary" href="#shop">
+              <span data-i18n="checkout.continueShopping">Continue shopping</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </a>
+          </section>
+
+          <section class="checkout-empty-state" id="checkoutEmptyState" aria-labelledby="checkoutEmptyTitle" hidden>
+            <div class="checkout-empty-state__art" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 48 48"><path d="M39 8C24 8 13 14 13 27a10 10 0 0 0 10 10C36 37 39 25 39 8Z"/><path d="M8 42c6-11 13-18 25-26"/><path d="M13 28c6 0 10 2 13 7"/></svg>
+            </div>
+            <p class="eyebrow"><span class="eyebrow__rule"></span><span data-i18n="checkout.empty.eyebrow">A LITTLE ROOM FOR RITUAL</span></p>
+            <h2 id="checkoutEmptyTitle" tabindex="-1" data-i18n="checkout.empty.title">Your bag is waiting.</h2>
+            <p data-i18n="checkout.empty.message">There are no items to review. Products in your bag will appear here.</p>
+            <div class="checkout-empty-state__actions">
+              <button class="button button--secondary" id="checkoutEmptyBag" type="button" data-i18n="checkout.empty.returnToBag">Return to your bag</button>
+              <a class="button button--primary" href="#shop">
+                <span data-i18n="checkout.continueShopping">Continue shopping</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </a>
+            </div>
+          </section>
+
+          <p class="sr-only" id="checkoutStateAnnouncement" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer" id="footer">

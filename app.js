@@ -77,7 +77,7 @@ const translations = {
     "product.detail.cones": "A little line, a lot of possibility",
     "product.detail.kit": "Everything for a slower afternoon",
     "product.detail.fine": "Small batch, sample description",
-    "product.add": "Add",
+    "product.add": "Add to bag",
     "pdp.home": "Home",
     "pdp.previewNote": "Product information is a visual preview; unverified details are marked.",
     "pdp.imagePending": "Product image pending confirmation",
@@ -294,7 +294,23 @@ const translations = {
     "toast.checkout": "Checkout is a visual preview; no order or payment is submitted.",
     "cart.quantityFor": "Quantity for {product}",
     "cart.decrease": "Decrease quantity of {product}",
-    "cart.increase": "Increase quantity of {product}"
+    "cart.increase": "Increase quantity of {product}",
+    "inventory.status.in": "In Stock",
+    "inventory.status.low": "Low Stock",
+    "inventory.status.out": "Out of Stock",
+    "inventory.count": "{count} available",
+    "inventory.lowMessage": "Only {count} left — low stock.",
+    "inventory.outMessage": "This product is currently out of stock. Please check back soon.",
+    "inventory.cart.available": "{available} available · {quantity} in your bag.",
+    "inventory.cart.limit": "This is the maximum currently available.",
+    "inventory.cart.shortage": "Your bag has {quantity}; only {available} are currently available.",
+    "inventory.cart.reduce": "Reduce to {available}",
+    "inventory.cart.remove": "Remove item",
+    "inventory.cart.addLimit": "Only {available} of {product} are available.",
+    "inventory.cart.inBag": "All currently available units are already in your bag.",
+    "inventory.checkout.available": "All items are available in the requested quantities.",
+    "inventory.checkout.shortage": "{product}: your bag has more than the {available} currently available. Please adjust the quantity before continuing.",
+    "inventory.checkout.return": "Return to your bag and adjust quantities."
   },
   bn: {
     skip: "মূল কনটেন্টে যান",
@@ -374,7 +390,7 @@ const translations = {
     "product.detail.cones": "একটি রেখা, অনেক সম্ভাবনা",
     "product.detail.kit": "ধীর দুপুরের জন্য সবকিছু",
     "product.detail.fine": "ছোট ব্যাচ, নমুনা বিবরণ",
-    "product.add": "যোগ",
+    "product.add": "ব্যাগে যোগ করুন",
     "pdp.home": "হোম",
     "pdp.previewNote": "পণ্যের তথ্য ভিজ্যুয়াল প্রিভিউ; অনিশ্চিত তথ্য স্পষ্টভাবে চিহ্নিত।",
     "pdp.imagePending": "পণ্যের ছবি নিশ্চিত করা হয়নি",
@@ -591,17 +607,34 @@ const translations = {
     "toast.checkout": "এটি চেকআউটের ভিজ্যুয়াল প্রিভিউ; অর্ডার বা পেমেন্ট জমা হয় না।",
     "cart.quantityFor": "পণ্যের পরিমাণ: {product}",
     "cart.decrease": "পরিমাণ কমান: {product}",
-    "cart.increase": "পরিমাণ বাড়ান: {product}"
+    "cart.increase": "পরিমাণ বাড়ান: {product}",
+    "inventory.status.in": "মজুত আছে",
+    "inventory.status.low": "স্বল্প মজুত",
+    "inventory.status.out": "মজুত নেই",
+    "inventory.count": "{count}টি মজুত আছে",
+    "inventory.lowMessage": "আর মাত্র {count}টি আছে — মজুত কম।",
+    "inventory.outMessage": "পণ্যটি বর্তমানে মজুত নেই। অনুগ্রহ করে পরে আবার দেখুন।",
+    "inventory.cart.available": "{available}টি মজুত · আপনার ব্যাগে {quantity}টি।",
+    "inventory.cart.limit": "বর্তমানে যতটি মজুত আছে, এটিই সর্বোচ্চ পরিমাণ।",
+    "inventory.cart.shortage": "আপনার ব্যাগে {quantity}টি আছে; বর্তমানে মজুত আছে মাত্র {available}টি।",
+    "inventory.cart.reduce": "{available}টিতে কমান",
+    "inventory.cart.remove": "পণ্যটি সরান",
+    "inventory.cart.addLimit": "{product}-এর মাত্র {available}টি মজুত আছে।",
+    "inventory.cart.inBag": "বর্তমানে মজুত সব পণ্যই আপনার ব্যাগে যোগ করা হয়েছে।",
+    "inventory.checkout.available": "আপনার চাওয়া পরিমাণে সব পণ্য মজুত আছে।",
+    "inventory.checkout.shortage": "{product}: আপনার ব্যাগের পরিমাণ বর্তমান মজুত {available}-এর বেশি। এগোনোর আগে পরিমাণ ঠিক করুন।",
+    "inventory.checkout.return": "ব্যাগে ফিরে গিয়ে পরিমাণ ঠিক করুন।"
   }
 };
 
 const products = {
-  powder: { price: 380, nameKey: "product.powder", image: "public/brand-assets/product-02.jpg", imageAltKey: "product.powderImageAlt", imageWidth: 1086, imageHeight: 1448, detail: "100 g", categoryKey: "pdp.category.powder" },
-  cones: { price: 350, nameKey: "product.cones", image: "public/brand-assets/product-01.png", imageAltKey: "product.coneImageAlt", imageWidth: 1254, imageHeight: 1254, detail: "3 pieces", categoryKey: "pdp.category.cones" },
-  kit: { price: 1250, nameKey: "product.kit", image: "public/brand-assets/mehndi-ceremony.jpg", imageAltKey: "product.kitImageAlt", imageWidth: 960, imageHeight: 1620, detail: "4 pieces", categoryKey: "pdp.category.kit" },
-  fine: { price: 240, nameKey: "product.fine", image: "public/brand-assets/product-02.jpg", imageAltKey: "product.powderImageAlt", imageWidth: 1086, imageHeight: 1448, detail: "50 g", categoryKey: "pdp.category.powder" }
+  powder: { price: 380, stock: 10, nameKey: "product.powder", image: "public/brand-assets/product-02.jpg", imageAltKey: "product.powderImageAlt", imageWidth: 1086, imageHeight: 1448, detail: "100 g", categoryKey: "pdp.category.powder" },
+  cones: { price: 350, stock: 21, nameKey: "product.cones", image: "public/brand-assets/product-01.png", imageAltKey: "product.coneImageAlt", imageWidth: 1254, imageHeight: 1254, detail: "3 pieces", categoryKey: "pdp.category.cones" },
+  kit: { price: 1250, stock: 30, nameKey: "product.kit", image: "public/brand-assets/mehndi-ceremony.jpg", imageAltKey: "product.kitImageAlt", imageWidth: 960, imageHeight: 1620, detail: "4 pieces", categoryKey: "pdp.category.kit" },
+  fine: { price: 240, stock: 30, nameKey: "product.fine", image: "public/brand-assets/product-02.jpg", imageAltKey: "product.powderImageAlt", imageWidth: 1086, imageHeight: 1448, detail: "50 g", categoryKey: "pdp.category.powder" }
 };
 
+const LOW_STOCK_THRESHOLD = 10;
 const cart = new Map();
 const CART_STORAGE_KEY = "sobujer-ghran-cart-v1";
 const CART_STORAGE_VERSION = 1;
@@ -662,6 +695,72 @@ function getProductName(product) {
 function formatQuantity(quantity) {
   const locale = language === "bn" ? "bn-BD" : "en-BD";
   return new Intl.NumberFormat(locale).format(quantity);
+}
+
+function getStockState(stock) {
+  if (stock <= 0) return "out";
+  if (stock <= LOW_STOCK_THRESHOLD) return "low";
+  return "in";
+}
+
+function formatInventoryMessage(key, values = {}) {
+  return translations[language][key].replace(/\{(\w+)\}/g, (_, name) =>
+    Object.prototype.hasOwnProperty.call(values, name) ? String(values[name]) : ""
+  );
+}
+
+function getCartStockIssues() {
+  return Array.from(cart, ([key, quantity]) => ({
+    key,
+    quantity,
+    available: products[key].stock
+  })).filter((item) => item.quantity > item.available);
+}
+
+function renderProductInventory() {
+  document.querySelectorAll("#productGrid [data-product-id]").forEach((card) => {
+    const key = card.dataset.productId;
+    const product = products[key];
+    if (!product) {
+      console.error(`Cannot display inventory for unknown product "${key}".`);
+      return;
+    }
+
+    const stock = product.stock;
+    const state = getStockState(stock);
+    const status = card.querySelector("[data-stock-status]");
+    const label = card.querySelector("[data-stock-label]");
+    const count = card.querySelector("[data-stock-count]");
+    const addButton = card.querySelector("[data-add]");
+    if (!status || !label || !count || !addButton) {
+      console.error(`Product card "${key}" is missing inventory UI.`);
+      return;
+    }
+
+    status.className = `stock-status stock-status--${state} product-card__stock-badge`;
+    label.textContent = translations[language][`inventory.status.${state}`];
+    count.textContent = formatInventoryMessage("inventory.count", { count: formatQuantity(stock) });
+    addButton.disabled = stock === 0 || (cart.get(key) || 0) >= stock;
+  });
+}
+
+function renderCheckoutStockMessage() {
+  const issues = getCartStockIssues();
+  const message = document.querySelector("#checkoutStockMessage");
+  const icon = message.querySelector(".checkout-stock-message__icon");
+  const issue = issues[0];
+  message.classList.toggle("checkout-stock-message--warning", Boolean(issue));
+  message.setAttribute("role", issue ? "alert" : "status");
+  icon.textContent = issue ? "!" : "✓";
+  document.querySelector("#checkoutStockMessageText").textContent = issue
+    ? formatInventoryMessage("inventory.checkout.shortage", {
+      product: getProductName(products[issue.key]),
+      available: formatQuantity(issue.available)
+    })
+    : translations[language]["inventory.checkout.available"];
+  document.querySelector("#checkoutStockReturnLink").hidden = !issue;
+  document.querySelector("#checkoutReviewAction").disabled = cart.size === 0 || issues.length > 0;
+  return issues;
 }
 
 function getCheckoutDeliveryArea() {
@@ -880,6 +979,7 @@ function renderCheckoutSummary() {
   totalLabel.textContent = !selectedArea
     ? translations[language]["checkout.toBeConfirmed"]
     : formatPrice(subtotal + selectedArea.charge);
+  renderCheckoutStockMessage();
 }
 
 function renderCheckoutConfirmation() {
@@ -993,6 +1093,10 @@ function syncCheckoutAfterCartChange() {
   if (!checkoutRouteActive) return;
   if (cart.size === 0 && (checkoutCurrentState === "details" || checkoutCurrentState === "review")) {
     renderCheckoutState("empty");
+    return;
+  }
+  if (getCartStockIssues().length > 0 && checkoutCurrentState === "review") {
+    renderCheckoutState("details");
     return;
   }
   if (checkoutCurrentState === "review" && checkoutCartRevision !== checkoutReviewedCartRevision) {
@@ -1221,7 +1325,12 @@ function renderProductDetails(key) {
   const product = products[key];
   if (!product) return;
 
+  const remainingStock = Math.max(0, product.stock - (cart.get(key) || 0));
+  if (product.stock === 0) productQuantity = 0;
+  else if (remainingStock === 0) productQuantity = 1;
+  else productQuantity = Math.min(Math.max(1, productQuantity), remainingStock);
   const name = getProductName(product);
+  const stockState = getStockState(product.stock);
   document.querySelector("#productView").setAttribute("aria-labelledby", "pdpTitle");
   document.querySelector("#pdpCategory").textContent = translations[language][product.categoryKey];
   document.querySelector("#pdpTitle").textContent = name;
@@ -1235,6 +1344,22 @@ function renderProductDetails(key) {
   document.title = `${name} — ${translations[language]["brand.name"]}`;
   document.querySelector("#pdpQuantityValue").textContent = formatQuantity(productQuantity);
   document.querySelector("#pdpQuantityDecrease").disabled = productQuantity <= 1;
+  document.querySelector("#pdpQuantityIncrease").disabled = remainingStock === 0 || productQuantity >= remainingStock;
+  document.querySelector("#pdpAddToCart").disabled = remainingStock === 0;
+  document.querySelector("#pdpBuyNow").disabled = remainingStock === 0;
+  const stockStatus = document.querySelector("#pdpStockStatus");
+  stockStatus.className = `stock-status stock-status--${stockState}`;
+  document.querySelector("#pdpStockLabel").textContent = translations[language][`inventory.status.${stockState}`];
+  document.querySelector("#pdpStockCount").textContent = formatInventoryMessage("inventory.count", {
+    count: formatQuantity(product.stock)
+  });
+  const stockMessage = document.querySelector("#pdpStockMessage");
+  stockMessage.hidden = stockState === "in" && remainingStock > 0;
+  stockMessage.textContent = stockState === "out"
+    ? translations[language]["inventory.outMessage"]
+    : remainingStock === 0
+      ? translations[language]["inventory.cart.inBag"]
+      : formatInventoryMessage("inventory.lowMessage", { count: formatQuantity(product.stock) });
   renderProductGallery(product);
   renderRelatedProducts(key);
 }
@@ -1279,6 +1404,9 @@ function handlePageRoute() {
     }
 
     renderCheckoutSummary();
+    if (getCartStockIssues().length > 0 && checkoutCurrentState === "review") {
+      checkoutCurrentState = "details";
+    }
     renderCheckoutState(checkoutCurrentState, false);
     window.scrollTo(0, 0);
     window.requestAnimationFrame(() => {
@@ -1433,6 +1561,7 @@ function getCartFocusableElements() {
 }
 
 function renderCart() {
+  renderProductInventory();
   const entries = Array.from(cart.entries());
   const quantity = entries.reduce((sum, [, count]) => sum + count, 0);
   const subtotal = entries.reduce((sum, [key, count]) => sum + products[key].price * count, 0);
@@ -1444,15 +1573,37 @@ function renderCart() {
   cartItems.innerHTML = entries.map(([key, count]) => {
     const product = products[key];
     const productName = translations[language][product.nameKey];
+    const stockState = getStockState(product.stock);
+    const hasShortage = count > product.stock;
+    const stockCopy = hasShortage
+      ? formatInventoryMessage("inventory.cart.shortage", {
+        quantity: formatQuantity(count),
+        available: formatQuantity(product.stock)
+      })
+      : count >= product.stock
+        ? translations[language]["inventory.cart.limit"]
+        : formatInventoryMessage("inventory.cart.available", {
+          available: formatQuantity(product.stock),
+          quantity: formatQuantity(count)
+        });
     return `<article class="cart-item">
       <div class="cart-item__image"><img src="${product.image}" alt=""></div>
       <div class="cart-item__info">
         <strong>${productName}</strong>
         <span>${product.detail}</span>
+        <div class="cart-item__stock">
+          <span class="stock-status stock-status--${stockState}"><span class="stock-status__mark" aria-hidden="true"></span><span>${translations[language][`inventory.status.${stockState}`]}</span></span>
+          <span class="cart-item__stock-count">${formatInventoryMessage("inventory.count", { count: formatQuantity(product.stock) })}</span>
+        </div>
         <div class="cart-item__quantity" role="group" aria-label="${translations[language]["cart.quantityFor"].replace("{product}", productName)}">
           <button type="button" data-quantity="${key}" data-change="-1" aria-label="${translations[language]["cart.decrease"].replace("{product}", productName)}"><span aria-hidden="true">−</span></button>
-          <span>${language === "bn" ? new Intl.NumberFormat("bn-BD").format(count) : count}</span>
-          <button type="button" data-quantity="${key}" data-change="1" aria-label="${translations[language]["cart.increase"].replace("{product}", productName)}"><span aria-hidden="true">+</span></button>
+          <span>${formatQuantity(count)}</span>
+          <button type="button" data-quantity="${key}" data-change="1" aria-label="${translations[language]["cart.increase"].replace("{product}", productName)}"${count >= product.stock ? " disabled" : ""}><span aria-hidden="true">+</span></button>
+        </div>
+        <p class="cart-item__stock-copy${hasShortage ? " cart-item__stock-copy--warning" : ""}">${stockCopy}</p>
+        <div class="cart-item__stock-actions"${hasShortage ? "" : " hidden"}>
+          <button type="button" data-cart-action="reduce" data-product="${key}"${product.stock === 0 ? " hidden" : ""}>${formatInventoryMessage("inventory.cart.reduce", { available: formatQuantity(product.stock) })}</button>
+          <button type="button" data-cart-action="remove" data-product="${key}">${translations[language]["inventory.cart.remove"]}</button>
         </div>
       </div>
       <span class="cart-item__price">${formatPrice(product.price * count)}</span>
@@ -1473,10 +1624,21 @@ function addToCart(key, quantity) {
     return;
   }
 
-  cart.set(key, (cart.get(key) || 0) + quantity);
+  const product = products[key];
+  const nextQuantity = (cart.get(key) || 0) + quantity;
+  if (product.stock === 0 || !Number.isSafeInteger(nextQuantity) || nextQuantity > product.stock) {
+    showToast(formatInventoryMessage("inventory.cart.addLimit", {
+      product: getProductName(product),
+      available: formatQuantity(Math.max(0, product.stock - (cart.get(key) || 0)))
+    }));
+    return false;
+  }
+
+  cart.set(key, nextQuantity);
   checkoutCartRevision += 1;
   const persisted = persistCart();
   renderCart();
+  if (activeProductKey) renderProductDetails(activeProductKey);
   if (!persisted) {
     showCartPersistenceWarning();
     return true;
@@ -1489,9 +1651,16 @@ function addToCart(key, quantity) {
 }
 
 function updateProductQuantity(nextQuantity) {
-  productQuantity = Math.max(1, nextQuantity);
+  const product = activeProductKey ? products[activeProductKey] : null;
+  const remainingStock = product
+    ? Math.max(0, product.stock - (cart.get(activeProductKey) || 0))
+    : 0;
+  if (product && product.stock === 0) productQuantity = 0;
+  else if (product && remainingStock > 0) productQuantity = Math.min(remainingStock, Math.max(1, nextQuantity));
+  else productQuantity = 1;
   document.querySelector("#pdpQuantityValue").textContent = formatQuantity(productQuantity);
-  document.querySelector("#pdpQuantityDecrease").disabled = productQuantity === 1;
+  document.querySelector("#pdpQuantityDecrease").disabled = productQuantity <= 1;
+  document.querySelector("#pdpQuantityIncrease").disabled = !product || remainingStock === 0 || productQuantity >= remainingStock;
 }
 
 document.querySelectorAll(".product-price").forEach((element) => {
@@ -1534,9 +1703,17 @@ document.querySelector("#checkoutPreview").addEventListener("click", () => {
 });
 document.querySelector("#checkoutBreadcrumbBag").addEventListener("click", openCart);
 document.querySelector("#checkoutEmptyBag").addEventListener("click", openCart);
+document.querySelector("#checkoutStockReturnLink").addEventListener("click", (event) => {
+  event.preventDefault();
+  openCart();
+});
 
 document.querySelector("#checkoutForm").addEventListener("submit", (event) => {
   event.preventDefault();
+  if (renderCheckoutStockMessage().length > 0) {
+    document.querySelector("#checkoutStockMessage").focus();
+    return;
+  }
   checkoutValidationAttempted = true;
   if (validateCheckoutFields()) renderCheckoutState("review");
 });
@@ -1564,6 +1741,11 @@ checkoutDeliveryArea.addEventListener("change", () => {
 document.querySelector("#checkoutEditAction").addEventListener("click", () => renderCheckoutState("details"));
 document.querySelector("#checkoutConfirmAction").addEventListener("click", () => {
   if (checkoutCurrentState !== "review") return;
+  if (renderCheckoutStockMessage().length > 0) {
+    renderCheckoutState("details", false);
+    document.querySelector("#checkoutStockMessage").focus();
+    return;
+  }
   if (cart.size === 0) {
     renderCheckoutState("empty");
     return;
@@ -1615,16 +1797,50 @@ document.querySelector("#checkoutConfirmAction").addEventListener("click", () =>
 });
 
 cartItems.addEventListener("click", (event) => {
-  const button = event.target.closest("button[data-quantity]");
+  const button = event.target.closest("button[data-quantity], button[data-cart-action]");
   if (!button) return;
-  const key = button.dataset.quantity;
+  const key = button.dataset.quantity || button.dataset.product;
+  if (!Object.prototype.hasOwnProperty.call(products, key)) {
+    console.error(`Cannot update unknown cart product "${key}".`);
+    return;
+  }
+  if (button.dataset.cartAction) {
+    if (button.dataset.cartAction === "reduce") {
+      if (products[key].stock > 0) cart.set(key, products[key].stock);
+      else cart.delete(key);
+    } else if (button.dataset.cartAction === "remove") {
+      cart.delete(key);
+    } else {
+      console.error(`Cannot apply unknown cart action "${button.dataset.cartAction}".`);
+      return;
+    }
+    checkoutCartRevision += 1;
+    const persisted = persistCart();
+    renderCart();
+    if (activeProductKey) renderProductDetails(activeProductKey);
+    if (!persisted) showCartPersistenceWarning();
+    const focusTarget = cart.has(key)
+      ? cartItems.querySelector(`button[data-quantity="${key}"][data-change="-1"]`)
+      : document.querySelector("#cartClose");
+    focusTarget.focus();
+    return;
+  }
+
   const nextCount = (cart.get(key) || 0) + Number(button.dataset.change);
   const change = button.dataset.change;
+  if (Number(change) > 0 && nextCount > products[key].stock) {
+    showToast(formatInventoryMessage("inventory.cart.addLimit", {
+      product: getProductName(products[key]),
+      available: formatQuantity(Math.max(0, products[key].stock - (cart.get(key) || 0)))
+    }));
+    return;
+  }
   if (nextCount <= 0) cart.delete(key);
   else cart.set(key, nextCount);
   checkoutCartRevision += 1;
   const persisted = persistCart();
   renderCart();
+  if (activeProductKey) renderProductDetails(activeProductKey);
   if (!persisted) showCartPersistenceWarning();
   const focusTarget = Array.from(cartItems.querySelectorAll("button[data-quantity]"))
     .find((control) => control.dataset.quantity === key && control.dataset.change === change);
